@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+// color
+$sy-pri: #206fd6;
+$sy-pri-01: #004bb7;
+
+$sy-white: #ffffff;
+$sy-black: #2b2b2b;
+$sy-gray-01: #f8f8f8;
+$sy-gray-02: #f6f6f6;
+$sy-gray-03: #ebebeb;
+$sy-gray-04: #e0e0e0;
+$sy-gray-05: #c4c4c4;
+$sy-gray-06: #868686;
+$sy-gray-07: #626262;
+$sy-gray-08: #424242;
+$sy-gray-09: #333333;
+
+$sy-red: #ff5b5b;
+$sy-yellow: #ffd951;
+$sy-green: #3cdf98;
+$sy-cyan: #02cde8;
+$sy-blue: #0089d6;
+$sy-purple: #ad28dc;
+$sy-pink: #ff5c9a;
+$sy-livid: #aac5da;
+
+//csp color
+// aws 한정
+$sy-indigo-aws: #232f3e;
+$sy-yellow-aws: #ffa235;
+$color-aws: $sy-indigo-aws;
+// azure
+$color-azure: #0089d6;
+// ncloud
+$color-ncloud: #3cdf98;
+
+// default color
+$bg-color: $sy-gray-01;
+$txt-color: #333;
+
+$color-txt: $sy-gray-01;
+$color-bg: $sy-gray-09;
+
+// component color
+$color-default: $sy-gray-05;
+// default-bg color
+$color-base: $sy-white;
+// modal-bg color
+$color-modal: $sy-white;
+// input-bg color
+$color-inputBg: $sy-gray-03;
+// pageHeader-bg color
+$color-pageHeader: $sy-white;
+// projectHeader-bg color
+$color-projectHeader: $sy-white;
+// nav-bg color
+$color-nav: $sy-white;
+// aside-bg color
+$color-aside: $sy-gray-03;
+// footer-bg color
+$color-footer: $sy-white;
+
+$color-theme: $sy-pri;
+
+// codeEditor start
+// monokai
+$edit-default: #f8f8f8;
+$edit-string: #ffd866;
+$edit-function: #78dce8;
+$edit-operator: #ff6188;
+$edit-numeric: #ab9df2;
+$edit-bg: #2a314b;
+$edit-gutter: #2a314b;
+// codeEditor end
+
+$borderSize: 1.5px;
+
+$shadow-out: 0px 0px 6px -1px;
+$shadow-in: 0px -5px 6px 7px;
+$shadow-btm: 0px 4px 8px -1px;
+$shadow-default: 0px 0px 4px -1px;
+
+$gradient_field: linear-gradient(
+        180deg,
+        rgba(246, 246, 246, 0.6) 0%,
+        rgba(224, 224, 224, 0.6) 100%
+    ),
+    rgba(224, 224, 224, 0.6);
+
+$gradient_edit: linear-gradient(
+    270deg,
+    #ffffff 0%,
+    #ad28dc 11.72%,
+    #5c4af6 50%
+);
+
+$gradient_red: linear-gradient(180deg, #ff5b5b 0%, #ff5c9a 100%);
+$gradient_purple: linear-gradient(90deg, #ad28dc 0%, #5c4af6 100%);
+$gradient_green: linear-gradient(90deg, #3cdf98 0%, #1fd9a6 100%);

@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
+import PageHeader from "../Header/PageHeader"
+import PageFooter from "../Footer/PageFooter"
+import * as mainStyles from "../../styles/layout/_Main.module.scss"
 interface iLayout {
     pageTitle?: string
     children: React.ReactNode
@@ -21,22 +23,9 @@ const Layout = ({ pageTitle, children }: iLayout) => {
             <title>
                 {pageTitle} | {data.site.siteMetadata.title}
             </title>
-            <header>{data.site.siteMetadata.title}</header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/info">About</Link>
-                    </li>
-                </ul>
-            </nav>
-            <main>
-                <h1>{pageTitle}</h1>
-                {children}
-            </main>
-            <footer>test2</footer>
+            <PageHeader title={data.site.siteMetadata.title} />
+            <main className={mainStyles.main}>{children}</main>
+            <PageFooter />
         </div>
     )
 }
