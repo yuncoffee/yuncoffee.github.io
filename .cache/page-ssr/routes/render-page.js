@@ -1729,6 +1729,12 @@ var plugins = [{
     "root": "/Users/coffeegom/Desktop/coffeelog",
     "commonmark": false
   }
+}, {
+  name: 'default-site-plugin',
+  plugin: __webpack_require__(/*! ./gatsby-ssr.ts */ "./gatsby-ssr.ts"),
+  options: {
+    "plugins": []
+  }
 }];
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
@@ -2408,6 +2414,63 @@ __webpack_require__.r(__webpack_exports__);
 var scope_0 = (__webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js")["default"]);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.assign({}, scope_0));
+
+/***/ }),
+
+/***/ "./gatsby-ssr.ts":
+/*!***********************!*\
+  !*** ./gatsby-ssr.ts ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "wrapRootElement": () => (/* binding */ wrapRootElement)
+/* harmony export */ });
+/* harmony import */ var _src_components_Provider_Provider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/components/Provider/Provider */ "./src/components/Provider/Provider.tsx");
+
+const wrapRootElement = _src_components_Provider_Provider__WEBPACK_IMPORTED_MODULE_0__["default"];
+
+/***/ }),
+
+/***/ "./src/components/Provider/Provider.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/Provider/Provider.tsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "windowContext": () => (/* binding */ windowContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const windowContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createContext({});
+
+const Provider = props => {
+  // const [isDark, setTheme] = useState(false)
+  const {
+    0: windowSizeState,
+    1: setWindowSizeState
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    width: 0,
+    height: 0
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(windowContext.Provider, {
+    value: {
+      windowSizeState,
+      changeWindowSize: size => setWindowSizeState(size)
+    }
+  }, props.children);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  element
+}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Provider, null, element));
 
 /***/ }),
 
