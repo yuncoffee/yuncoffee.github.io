@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
-@import "/styles/variables";
-@import "/styles/mixin/mixin";
+@import "../variables";
+@import "../mixin/mixin";
 
 $useCases: "default", "cancel", "csp", "warning";
 .button {

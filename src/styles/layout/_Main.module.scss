@@ -4,9 +4,51 @@
 @import "../mixin/mixin";
 
 .main {
-    max-width: 1280px;
-    height: 100%;
-    padding: 40px 0 0 0;
+    // max-width: 1280px;
+    height: calc(100% - 48px);
+    padding: 100px 16px 16px 16px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    @include desktop() {
+        max-width: 1280px;
+    }
+
+    &__nav {
+        position: relative;
+        max-width: 320px;
+        width: 100%;
+        min-width: 200px;
+        padding: 16px;
+        background: rgba($sy-white, 0);
+        border: $borderSize solid rgba($sy-gray-04, 1);
+        border-radius: 4px;
+        transition: 0.4s;
+
+        @include mobile() {
+            position: absolute;
+            left: 0;
+            top: 84px;
+            height: calc(100% - 84px);
+            background: rgba($sy-white, 1);
+            border: $borderSize solid rgba($sy-gray-04, 0);
+            box-shadow: $shadow-default rgba($sy-black, 0.2);
+            transform: translateX(-320px);
+            // height: 100%;
+        }
+
+        &.isActive {
+            transform: translateX(0);
+        }
+    }
+
+    &__contents {
+        width: 100%;
+        padding: 16px;
+        background: rgba($sy-gray-01, 0);
+        border: $borderSize solid rgba($sy-gray-04, 1);
+        border-radius: 4px;
+    }
 }

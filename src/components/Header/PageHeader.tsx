@@ -9,27 +9,17 @@ interface iPageHeader {
 function PageHeader({ title }: iPageHeader) {
     return (
         <header className={styles.mainHeader}>
-            <div className={styles.mainHeader__deco}></div>
-            <div className={styles.mainHeader__deco__box}>
-                <h5 s-font-weight="600">{title}</h5>
+            <div s-box="h-box" s-justify="space-between" s-padding-right="16px">
+                <div s-box="h-box" s-align="center">
+                    <Link to="/">
+                        <StaticImage
+                            src="../images/logo/my_logo.png"
+                            alt="커피곰의 로고입니다."
+                        />
+                    </Link>
+                </div>
             </div>
-            <div>
-                {/* <StaticImage
-                    src="../images/logo/my_logo.png"
-                    alt="커피곰의 로고입니다."
-                /> */}
-            </div>
-            <nav s-box="h-box">
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/info">About</Link>
-                    </li>
-                </ul>
-            </nav>
-            <div>{title}</div>
+            {/* <h5 s-font-weight="600">{title}</h5> */}
         </header>
     )
 }

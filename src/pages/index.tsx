@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import "../styles/reset.css"
 import "../styles/_global.scss"
+import * as styles from "../styles/layout/_Main.module.scss"
 import * as mdStyles from "../styles/md.module.scss"
 import { Helmet } from "react-helmet"
 import PostList from "../components/PostList"
@@ -17,15 +18,15 @@ const IndexPage = ({ data }: any) => {
                 <title>coffee.log</title>
             </Helmet>
             <Layout pageTitle="coffee.log">
-                {/* {data.allMdx.nodes.map((node: any) => (
-                        <article key={node.id} className={mdStyles.test}>
-                            <h2>{node.frontmatter.title}</h2>
-                            <p>Posted: {node.frontmatter.date}</p>
-                            <MDXRenderer>{node.body}</MDXRenderer>
-                        </article>
-                    ))} */}
-                <h1>대 공사중!</h1>
-                <PostList data={data} />
+                {/* profile */}
+                <aside className={styles.main__nav}>
+                    <h1>대 공사중!</h1>
+                </aside>
+
+                {/* post */}
+                <section className={styles.main__contents}>
+                    <PostList data={data} />
+                </section>
             </Layout>
         </>
     )
