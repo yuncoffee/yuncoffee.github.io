@@ -10,6 +10,10 @@ var plugins = [{
       name: 'gatsby-plugin-mdx',
       plugin: require('/Users/coffeegom/Desktop/coffeelog/node_modules/gatsby-plugin-mdx/gatsby-ssr.js'),
       options: {"plugins":[],"extensions":[".mdx",".md"],"defaultLayouts":{},"gatsbyRemarkPlugins":[],"lessBabel":false,"remarkPlugins":[],"rehypePlugins":[],"mediaTypes":["text/markdown","text/x-markdown"],"root":"/Users/coffeegom/Desktop/coffeelog","commonmark":false},
+    },{
+      name: 'default-site-plugin',
+      plugin: require('/Users/coffeegom/Desktop/coffeelog/gatsby-ssr.ts'),
+      options: {"plugins":[]},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:

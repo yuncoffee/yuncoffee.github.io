@@ -1,7 +1,6 @@
 import { CreatePagesArgs, graphql } from "gatsby"
 import path from "path"
 import React from "react"
-import { RecoilRoot } from "recoil"
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
@@ -24,22 +23,23 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     `)
 
     if (errors) {
+        console.log("에러임", errors)
         throw errors
     }
 
-    data.allMdx.nodes.forEach((node) => {
-        createPage({
-            path: node.slug,
-            context: {
-                date: node.frontmatter.date,
-                title: node.frontmatter.title,
-                body: node.body,
-                id: node.id,
-            },
+    // data.allMdx.nodes.forEach((node) => {
+    //     createPage({
+    //         path: node.slug,
+    //         context: {
+    //             date: node.frontmatter.date,
+    //             title: node.frontmatter.title,
+    //             body: node.body,
+    //             id: node.id,
+    //         },
 
-            component: templateComponent,
-        })
-    })
+    //         component: templateComponent,
+    //     })
+    // })
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {

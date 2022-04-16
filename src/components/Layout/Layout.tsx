@@ -13,6 +13,7 @@ interface iLayout {
 }
 
 const Layout = ({ pageTitle, children }: iLayout) => {
+    const isBrowser = typeof window !== "undefined"
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -54,7 +55,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                 {pageTitle} | {data.site.siteMetadata.title}
             </title>
             <PageHeader title={data.site.siteMetadata.title} />
-            <PageNav />
+            {isBrowser ? <PageNav /> : ""}
             <main className={mainStyles.main}>{children}</main>
             <PageFooter />
         </>
