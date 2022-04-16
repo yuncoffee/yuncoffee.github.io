@@ -13,7 +13,7 @@ function PageHeader({ title }: iPageHeader) {
                 <div s-box="h-box" s-align="center">
                     <Link to="/">
                         <StaticImage
-                            src="../images/logo/my_logo.png"
+                            src="../../images/logo/my_logo.png"
                             alt="커피곰의 로고입니다."
                         />
                     </Link>

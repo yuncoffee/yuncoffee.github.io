@@ -13,7 +13,6 @@ type btnSize = "xs" | "sm" | "mid" | "lg" | "xl"
 type btnUse = "default" | "cancel" | "warning"
 
 interface ibtnStyle {
-    name: string
     type?: btnStyleType
     size?: btnSize
     use?: btnUse
@@ -35,6 +34,7 @@ interface ibtnStyle {
 }
 
 export interface iBtn extends ibtnStyle {
+    name: string
     iconPosition?: "before" | "after"
 }
 

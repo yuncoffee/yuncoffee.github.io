@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../../../../styles/elements/_Button.module.scss"
+import * as styles from "../../../styles/elements/_Button.module.scss"
 import { iIcon } from "../../../models/components"
 
 const Icon = ({

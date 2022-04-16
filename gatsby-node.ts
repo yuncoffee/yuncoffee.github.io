@@ -1,5 +1,7 @@
 import { CreatePagesArgs, graphql } from "gatsby"
 import path from "path"
+import React from "react"
+import { RecoilRoot } from "recoil"
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
