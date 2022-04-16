@@ -15,6 +15,7 @@ import Icon from "../components/Elements/Button/Icon"
 
 // markup
 const IndexPage = ({ data }: any) => {
+    const isBrowser = typeof window !== "undefined"
     const windowDispatch = useContext(windowContext)
     const mainNavRef = useRef<HTMLElement>(null)
 
@@ -67,8 +68,7 @@ const IndexPage = ({ data }: any) => {
                     ) : (
                         ""
                     )}
-
-                    <PostList data={data} />
+                    {isBrowser ? <PostList data={data} /> : ""}
                 </section>
             </Layout>
         </>
