@@ -10,7 +10,7 @@ function PostList({ data }: any) {
                     <div key={node.id}>
                         <h2>{node.frontmatter.title}</h2>
                         <p>Posted: {node.frontmatter.date}</p>
-                        <Link to={`/${node.slug}/`}>go to</Link>
+                        <Link to={`/post/${node.slug}/`}>go to</Link>
                     </div>
                 )
             })}
