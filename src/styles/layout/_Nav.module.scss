@@ -8,10 +8,12 @@
     top: 40px;
     min-height: 28px;
     width: 100%;
-    background: rgba($sy-gray-01, 1);
+    background: rgba($sy-gray-01, 0.1);
+    backdrop-filter: blur(4px);
     padding: 8px;
     display: flex;
     gap: 8px;
+    // 일반적으로 mainContents보다 위에
     z-index: 1;
 
     @include beforeLine($btm: $sy-gray-04);

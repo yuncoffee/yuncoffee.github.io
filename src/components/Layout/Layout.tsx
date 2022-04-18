@@ -1,4 +1,11 @@
-import React, { useEffect, useContext, useState, useCallback } from "react"
+import React, {
+    useEffect,
+    useContext,
+    useState,
+    useCallback,
+    useRef,
+    ReactChild,
+} from "react"
 
 import { Link, useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../Header/PageHeader"
@@ -7,9 +14,12 @@ import * as mainStyles from "../../styles/layout/_Main.module.scss"
 import PageNav from "../Nav/PageNav"
 import { windowContext } from "../Provider/Provider"
 import { throttle } from "lodash"
+import * as styles from "../../styles/layout/_Main.module.scss"
+import Button from "../../components/Elements/Button/Button"
+import Icon from "../../components/Elements/Button/Icon"
 interface iLayout {
     pageTitle?: string
-    children: React.ReactNode
+    children: React.ReactChild
 }
 
 const Layout = ({ pageTitle, children }: iLayout) => {
@@ -24,11 +34,22 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         }
     `)
 
-    const [windowWidthState, setWindowWidthState] = useState(0)
-
+    const mainNavRef = useRef<HTMLElement>(null)
+    const [windowWidthState, setWindowWidthState] = useState<number>()
     const handleWindowSize = useCallback(() => {
         setWindowWidthState(window.innerWidth)
     }, [])
+
+    const handleToggleMainNav = () => {
+        if (windowDispatch.windowSizeState.width > 757) {
+            mainNavRef.current?.classList.remove(styles.isActive)
+            return
+        } else {
+            mainNavRef.current?.classList.contains(styles.isActive)
+                ? mainNavRef.current?.classList.remove(styles.isActive)
+                : mainNavRef.current?.classList.add(styles.isActive)
+        }
+    }
 
     useEffect(() => {
         window.addEventListener("resize", throttle(handleWindowSize, 200))
@@ -47,6 +68,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
             ...windowDispatch.windowSizeState,
             width: windowWidthState,
         })
+        console.log(windowWidthState)
     }, [windowWidthState])
 
     return (
@@ -56,7 +78,42 @@ const Layout = ({ pageTitle, children }: iLayout) => {
             </title>
             <PageHeader title={data.site.siteMetadata.title} />
             {isBrowser ? <PageNav /> : ""}
-            <main className={mainStyles.main}>{children}</main>
+            <main className={mainStyles.main}>
+                {/* profile */}
+                <aside className={styles.main__nav} ref={mainNavRef}>
+                    <div
+                        s-box="h-box"
+                        s-justify="space-between"
+                        s-align="center"
+                    >
+                        <h1>대 공사중!</h1>
+                        {windowDispatch.windowSizeState.width < 757 ? (
+                            <Icon
+                                onClick={() => {
+                                    handleToggleMainNav()
+                                }}
+                            />
+                        ) : (
+                            ""
+                        )}
+                    </div>
+                </aside>
+
+                {/* post */}
+                <section className={styles.main__contents}>
+                    {windowDispatch.windowSizeState.width < 757 ? (
+                        <Button
+                            name="출력버튼"
+                            onClick={() => {
+                                handleToggleMainNav()
+                            }}
+                        />
+                    ) : (
+                        ""
+                    )}
+                    {children}
+                </section>
+            </main>
             <PageFooter />
         </>
     )

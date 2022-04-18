@@ -5,7 +5,8 @@
 
 .main {
     // max-width: 1280px;
-    height: calc(100% - 48px);
+    // height: calc(100% - 48px);
+    height: 100%;
     padding: 100px 16px 16px 16px;
     margin: 0 auto;
     position: relative;
@@ -30,12 +31,15 @@
         @include mobile() {
             position: absolute;
             left: 0;
-            top: 84px;
-            height: calc(100% - 84px);
-            background: rgba($sy-white, 1);
+            top: 40px;
+            height: calc(100% - 40px);
+            background: rgba($sy-white, 0.1);
             border: $borderSize solid rgba($sy-gray-04, 0);
             box-shadow: $shadow-default rgba($sy-black, 0.2);
+            backdrop-filter: blur(24px);
             transform: translateX(-320px);
+            // 상단 Tab보다 위에
+            z-index: 5;
             // height: 100%;
         }
 
@@ -51,4 +55,8 @@
         border: $borderSize solid rgba($sy-gray-04, 1);
         border-radius: 4px;
     }
+}
+
+.con_postList {
+    display: flex;
 }

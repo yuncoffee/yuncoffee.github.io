@@ -3,181 +3,41 @@
 @import "../variables";
 @import "../mixin/mixin";
 
-.folderList {
+.postList {
+    // background: teal;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    padding: 6px 4px;
-    border-radius: 4px;
+    flex-wrap: wrap;
+    gap: 16px;
     position: relative;
-    transition: 0.4s;
-    box-shadow: 0px 3px 6px -4px rgba(#206fd6, 0);
-    cursor: pointer;
-    &:hover {
-        background: rgba($sy-white, 1);
-        box-shadow: 0px 3px 6px -4px rgba(#206fd6, 0);
-    }
-
-    .folderList__deco {
-        position: absolute;
-        width: 5px;
-        fill: #206fd6;
-    }
-
-    & .folderList__title {
-        @include h5;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 0 0 0 8px;
-        span {
-            @include ellipsis-text();
-            width: 132px;
-        }
-        color: rgba($sy-gray-07, 1);
-    }
-
-    & .folderList__btn[ly-use="default"] {
-        background: rgba($sy-gray-02, 0);
-        border-color: rgba($sy-gray-02, 0);
-        color: rgba($sy-gray-07, 1);
-        font-size: 1rem;
-
-        &:hover {
-            border-color: rgba($sy-gray-02, 0);
-            background: rgba($sy-gray-02, 1);
-        }
-    }
-
-    &.isActive {
-        background: rgba($sy-white, 1);
-        box-shadow: 0px 3px 6px -4px rgba(#206fd6, 0.5);
-
-        & .folderList__title {
-            color: rgba($sy-pri, 1);
-        }
-
-        & .folderList__btn[ly-use="default"] {
-            &:hover {
-                border-color: rgba($sy-gray-02, 0);
-                background: rgba($sy-gray-02, 1);
-            }
-        }
-    }
 }
 
-.select {
-    position: absolute;
-    width: 80px;
-    height: 48px;
-    right: 4px;
-    top: calc(100% - 4px);
-}
-
-.customOption {
-    @include h6;
-    box-shadow: 0px 3px 6px -4px rgba(#206fd6, 0);
-    &.isActive {
-        height: 100%;
-        opacity: 1;
-        // 폴더들보다 위로 올라오게
-        z-index: 100;
-        box-shadow: 0px 3px 6px -4px rgba(#206fd6, 0.5);
-    }
-}
-
-// CredentialList, UserList
-.credentialList {
-    padding: 6px 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.post {
+    min-height: 240px;
     border-radius: 4px;
+
+    border: $borderSize solid rgba($sy-gray-04, 1);
     background: rgba($sy-white, 1);
+    box-shadow: $shadow-btm rgba($sy-black, 0);
+    transition: 0.4s;
 
-    .cspImg {
-        width: 48px;
-        height: 24px;
+    &:hover {
+        box-shadow: $shadow-btm rgba($sy-black, 0.2);
     }
 
-    .con_profileImg {
-        width: 36px;
-        height: 36px;
+    @include desktop() {
+        width: calc(50% - 8px);
     }
 
-    .profileImg {
-        width: 32px;
-        height: 32px;
-    }
-    h5,
-    h6 {
-        @include ellipsis-text();
-        width: 80px;
-
-        @include desktop {
-            width: 200px;
-        }
+    @include tablet() {
+        width: calc(50% - 8px);
     }
 
-    & &__btn[ly-type="block-ghost"] {
-        &:hover {
-            background: rgba($sy-gray-02, 1);
-            color: rgba($sy-gray-07, 1);
-        }
-    }
-}
-
-.con_profileImg {
-    padding: 2px;
-
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $sy-white;
-
-    &::after {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        border: $borderSize solid rgba($sy-white, 1);
-        bottom: 0;
-        right: 0;
+    @include mobile() {
+        width: 100%;
     }
 
-    &.isEdit {
-        animation: rotateProfile 1.5s linear infinite;
-        background: $gradient_edit;
-
-        .profileImg {
-            animation: rotateReverseProfile 1.5s linear infinite;
-        }
+    &__img {
+        background: rebeccapurple;
+        min-height: 160px;
     }
-
-    &.isOnline {
-        &::after {
-            content: "";
-            background: $gradient_green;
-        }
-    }
-
-    &.isOffline {
-        &::after {
-            content: "";
-            background: $gradient_red;
-        }
-    }
-}
-
-.profileImg {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: url(../../public/images/test_profileImg.png) no-repeat center /
-        contain;
 }

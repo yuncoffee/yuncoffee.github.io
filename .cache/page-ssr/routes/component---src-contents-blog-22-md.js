@@ -56,14 +56,7 @@ This is my first blog post! Isn't it `, (0,_mdx_js_react__WEBPACK_IMPORTED_MODUL
     parentName: "ul"
   }, `Singing`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("li", {
     parentName: "ul"
-  }, `Eating potato-based foods`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h2", null, `정말인가요?자 이제 시작이야`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("code", {
-    parentName: "pre"
-  }, `public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-`)));
+  }, `Eating potato-based foods`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h2", null, `정말인가요?자 이제 시작이야`));
 }
 ;
 MDXContent.isMDXComponent = true;
