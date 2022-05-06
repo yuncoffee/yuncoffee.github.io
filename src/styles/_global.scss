@@ -53,7 +53,7 @@ h6 {
 }
 
 $colors: sy-gray-01, sy-gray-02, sy-gray-03, sy-gray-04, sy-gray-05, sy-gray-06,
-    sy-gray-07, sy-gray-08, sy-gray-09, sy-red;
+    sy-gray-07, sy-pri, sy-sec;
 @each $color in $colors {
     [s-color="#{$color}"] {
         @if $color == "sy-gray-01" {
@@ -77,17 +77,13 @@ $colors: sy-gray-01, sy-gray-02, sy-gray-03, sy-gray-04, sy-gray-05, sy-gray-06,
         @if $color == "sy-gray-07" {
             color: $sy-gray-07;
         }
-        @if $color == "sy-gray-08" {
-            color: $sy-gray-08;
-        }
-        @if $color == "sy-gray-09" {
-            color: $sy-gray-09;
-        }
-        @if $color == "sy-red" {
-            color: $sy-red;
-        }
+
         @if $color == "sy-pri" {
             color: $sy-pri;
+        }
+
+        @if $color == "sy-sec" {
+            color: $sy-sec;
         }
     }
     [s-line="#{$color}"] {
@@ -111,15 +107,6 @@ $colors: sy-gray-01, sy-gray-02, sy-gray-03, sy-gray-04, sy-gray-05, sy-gray-06,
         }
         @if $color == "sy-gray-07" {
             border: $borderSize solid $sy-gray-07;
-        }
-        @if $color == "sy-gray-08" {
-            border: $borderSize solid $sy-gray-08;
-        }
-        @if $color == "sy-gray-09" {
-            border: $borderSize solid $sy-gray-09;
-        }
-        @if $color == "sy-red" {
-            border: $borderSize solid $sy-red;
         }
         @if $color == "sy-pri" {
             border: $borderSize solid $sy-pri;
@@ -348,7 +335,7 @@ $boxTypes: "v-box", "h-box";
 }
 
 body {
-    background: rgba($sy-gray-01, 1);
+    background: rgba($sy-bg, 1);
 
     @include mobile() {
         overflow-y: scroll;
@@ -427,4 +414,8 @@ body {
 
 #gatsby-focus-wrapper {
     height: 100%;
+}
+
+[s-font-type="fugaz"] {
+    font-family: "Fugaz One", cursive;
 }

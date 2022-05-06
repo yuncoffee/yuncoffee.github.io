@@ -9,13 +9,16 @@ interface iPageHeader {
 function PageHeader({ title }: iPageHeader) {
     return (
         <header className={styles.mainHeader}>
-            <div s-box="h-box" s-justify="space-between" s-padding-right="16px">
+            <div s-box="h-box" s-justify="space-between" s-padding-x="16px">
                 <div s-box="h-box" s-align="center">
                     <Link to="/">
-                        <StaticImage
+                        {/* <StaticImage
                             src="../../images/logo/my_logo.png"
                             alt="커피곰의 로고입니다."
-                        />
+                        /> */}
+                        <h1 s-font-type="fugaz" s-color="sy-pri">
+                            COFFEE.log
+                        </h1>
                     </Link>
                 </div>
             </div>

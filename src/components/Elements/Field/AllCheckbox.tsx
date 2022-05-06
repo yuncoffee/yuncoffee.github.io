@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import styles from "../../../../styles/elements/_Field.module.scss"
-import { iAllCheckbox } from "../../../models/components"
+import * as styles from "../../../styles/elements/_Field.module.scss"
+// import { iAllCheckbox } from "../../../models/components"
 function AllCheckbox({
     checkboxInfo,
     checkedState,
@@ -14,7 +14,7 @@ function AllCheckbox({
     ly_ref,
     onClick,
     onChange,
-}: iAllCheckbox) {
+}: any) {
     const handleOnChange = (e: any) => {
         if (checkedState.length === checkboxInfo.length) {
             setCheckedState([])

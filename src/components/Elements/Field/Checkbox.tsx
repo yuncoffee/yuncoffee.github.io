@@ -1,19 +1,19 @@
 import React from "react"
-import styles from "../../../../styles/elements/_Field.module.scss"
-import { iCheckbox } from "../../../models/components"
+import * as styles from "../../../styles/elements/_Field.module.scss"
+// import { iCheckbox } from "../../../models/components"
 const Checkbox = ({
     group,
     ly_value, // 체크박스 이름
     index, // 몇 번째 체크박스인지 확인하기 위함
-    className = undefined,
-    invalid = undefined,
-    disabled = undefined,
+    className,
+    invalid,
+    disabled,
     ly_ref,
     onClick,
     onChange,
     checkboxState,
     setCheckboxState,
-}: iCheckbox) => {
+}: any) => {
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let selfcheck = [index]
         let newCheckboxstate

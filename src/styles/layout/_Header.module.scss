@@ -3,113 +3,16 @@
 @import "../variables";
 @import "../mixin/mixin";
 
-// .mainHeader {
-//     top: 0;
-//     left: 0;
-//     height: 40px;
-//     padding: 0 16px;
-//     position: fixed;
-//     width: 100%;
-//     background: rgba($sy-gray-09, 0.9);
-//     box-shadow: $shadow-btm rgba($sy-black, 0.1);
-//     display: flex;
-//     justify-content: space-between;
-//     z-index: 1000;
-
-//     // @include beforeLine($btm: $sy-gray-04);
-
-//     &__deco {
-//         position: absolute;
-//         background: rgba($sy-gray-09, 0.9);
-//         width: 200px;
-//         height: 32px;
-//         top: 40px;
-//         left: 50%;
-//         transform: translate3d(-50%, 0, 0);
-//         border-bottom-right-radius: 8px;
-//         border-bottom-left-radius: 8px;
-//         z-index: 1000;
-//         box-shadow: $shadow-btm rgba($sy-black, 0.1);
-//         clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-
-//         // &::before {
-//         //     content: "";
-//         //     position: absolute;
-//         //     width: 0px;
-//         //     height: 0px;
-//         //     border-top: 33px solid rgba($sy-white, 1);
-//         //     border-bottom: 0 solid transparent;
-//         //     border-left: 24px solid transparent;
-//         //     border-right: 0 solid transparent;
-//         //     border-bottom-right-radius: 12px;
-//         //     top: 0;
-//         //     left: -20px;
-//         // }
-
-//         // &::after {
-//         //     content: "";
-//         //     position: absolute;
-//         //     width: 0px;
-//         //     height: 0px;
-//         //     border-top: 33px solid rgba($sy-white, 1);
-//         //     border-bottom: 0 solid transparent;
-//         //     border-left: 0px solid transparent;
-//         //     border-right: 24px solid transparent;
-//         //     border-bottom-left-radius: 12px;
-//         //     top: 0;
-//         //     right: -20px;
-//         // }
-//     }
-
-//     &__deco__box {
-//         background: rgba($sy-livid, 0.2);
-//         color: rgba($sy-white, 1);
-
-//         position: absolute;
-//         left: 50%;
-//         top: 100%;
-//         transform: translate3d(-50%, -50%, 0);
-//         width: 180px;
-//         height: 32px;
-//         z-index: 1001;
-//         padding: 4px;
-//         text-align: center;
-//         box-shadow: inset$shadow-btm rgba($sy-livid, 0.8);
-//         clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-//         // animation: rotateWindow 2.4s cubic-bezier(0, 0.68, 0.29, 1.33) infinite
-//         //     forwards;
-//         transition: 0.4s;
-
-//         &:hover {
-//             background: rgba($sy-livid, 0.4);
-//         }
-
-//         &::after {
-//             position: absolute;
-//             content: "";
-//             width: 100%;
-//             height: 100%;
-//             left: 0;
-//             top: 0;
-//             background: radial-gradient(
-//                 75.27% 75.27% at 50% 50%,
-//                 rgba(170, 197, 218, 0) 0%,
-//                 #aac5da 100%
-//             );
-//         }
-//     }
-// }
-
 .mainHeader {
     position: fixed;
     top: 0;
     width: 100%;
-    max-height: 40px;
+    height: 48px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    background: rgba($sy-white, 1);
-    box-shadow: $shadow-btm rgba($sy-black, 0.2);
+    background: rgba($sy-bg, 1);
     z-index: 100;
+    @include beforeLine($btm: $sy-line);
 }

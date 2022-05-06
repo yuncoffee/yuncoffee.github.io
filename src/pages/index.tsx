@@ -22,10 +22,6 @@ const IndexPage = ({ data }: any) => {
         <>
             <Helmet>
                 <title>coffee.log</title>
-                <link
-                    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-                    rel="stylesheet"
-                ></link>
             </Helmet>
             <Layout pageTitle="coffee.log">
                 <>{isBrowser ? <PostList data={data} /> : ""}</>

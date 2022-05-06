@@ -5,18 +5,20 @@
 
 .pageNav {
     position: fixed;
-    top: 40px;
+    top: 48px;
     min-height: 28px;
     width: 100%;
-    background: rgba($sy-gray-01, 0.1);
-    backdrop-filter: blur(4px);
-    padding: 8px;
+    background: rgba($sy-white, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 4px 8px;
     display: flex;
+    justify-content: space-between;
     gap: 8px;
+    box-shadow: $shadow-out rgba($sy-black, 0.2);
     // 일반적으로 mainContents보다 위에
     z-index: 1;
 
-    @include beforeLine($btm: $sy-gray-04);
+    @include beforeLine($btm: $sy-line);
     a {
         @include h4();
     }

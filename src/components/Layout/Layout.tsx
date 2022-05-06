@@ -17,6 +17,7 @@ import { throttle } from "lodash"
 import * as styles from "../../styles/layout/_Main.module.scss"
 import Button from "../../components/Elements/Button/Button"
 import Icon from "../../components/Elements/Button/Icon"
+import { Helmet } from "react-helmet"
 interface iLayout {
     pageTitle?: string
     children: React.ReactChild
@@ -73,11 +74,25 @@ const Layout = ({ pageTitle, children }: iLayout) => {
 
     return (
         <>
+            <Helmet>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+                    rel="stylesheet"
+                ></link>
+                <link
+                    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+                    rel="stylesheet"
+                ></link>
+            </Helmet>
             <title>
                 {pageTitle} | {data.site.siteMetadata.title}
             </title>
             <PageHeader title={data.site.siteMetadata.title} />
-            {isBrowser ? <PageNav /> : ""}
+            {isBrowser ? (
+                <PageNav windowWidthState={windowWidthState as number} />
+            ) : (
+                ""
+            )}
             <main className={mainStyles.main}>
                 {/* profile */}
                 <aside className={styles.main__nav} ref={mainNavRef}>
@@ -86,7 +101,6 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                         s-justify="space-between"
                         s-align="center"
                     >
-                        <h1>대 공사중!</h1>
                         {windowDispatch.windowSizeState.width < 757 ? (
                             <Icon
                                 onClick={() => {
@@ -111,6 +125,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                     ) : (
                         ""
                     )}
+                    <h1>hello</h1>
                     {children}
                 </section>
             </main>

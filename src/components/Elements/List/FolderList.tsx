@@ -112,8 +112,8 @@ function UserMadeFolderList({
             <div className={styles.select}>
                 <ul
                     className={
-                        fieldStyles.select__customOption +
-                        " " +
+                        // fieldStyles.select__customOption +
+                        // " " +
                         styles.customOption
                     }
                     ref={(el) => (selectRefs.current[index] = el)}
