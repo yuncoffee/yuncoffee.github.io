@@ -29,7 +29,7 @@ const _excluded = ["components"];
 /* @jsx mdx */
 
 const _frontmatter = {
-  "title": "언제까지?",
+  "title": "test-22",
   "date": "2021-07-23"
 };
 const layoutProps = {
@@ -56,7 +56,7 @@ This is my first blog post! Isn't it `, (0,_mdx_js_react__WEBPACK_IMPORTED_MODUL
     parentName: "ul"
   }, `Singing`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("li", {
     parentName: "ul"
-  }, `Eating potato-based foods`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h2", null, `정말인가요?자 이제 시작이야`));
+  }, `Eating potato-based foods`)));
 }
 ;
 MDXContent.isMDXComponent = true;

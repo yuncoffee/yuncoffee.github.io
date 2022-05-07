@@ -29,7 +29,7 @@ const _excluded = ["components"];
 /* @jsx mdx */
 
 const _frontmatter = {
-  "title": "느낌이 오잖아",
+  "title": "test_name",
   "date": "2021-07-23"
 };
 const layoutProps = {

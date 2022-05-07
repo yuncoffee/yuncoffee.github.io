@@ -8,17 +8,18 @@ import React, {
 } from "react"
 
 import { Link, useStaticQuery, graphql } from "gatsby"
-import PageHeader from "../Header/PageHeader"
-import PageFooter from "../Footer/PageFooter"
-import * as mainStyles from "../../styles/layout/_Main.module.scss"
-import PageNav from "../Nav/PageNav"
+
 import { windowContext } from "../Provider/Provider"
 import { throttle } from "lodash"
-import * as styles from "../../styles/layout/_Main.module.scss"
+
 import Button from "../../components/Elements/Button/Button"
 import Icon from "../../components/Elements/Button/Icon"
-import { Helmet } from "react-helmet"
+import PageHeader from "../Header/PageHeader"
+import PageFooter from "../Footer/PageFooter"
+import PageNav from "../Nav/PageNav"
 import ScrollNav from "../Nav/ScrollNav"
+import { Helmet } from "react-helmet"
+import * as styles from "../../styles/layout/_Main.module.scss"
 interface iLayout {
     pageTitle?: string
     children: React.ReactChild
@@ -38,14 +39,14 @@ const Layout = ({ pageTitle, children }: iLayout) => {
 
     const mainNavRef = useRef<HTMLElement>(null)
     const [windowWidthState, setWindowWidthState] = useState<number>(
-        window.innerWidth
+        isBrowser ? window.innerWidth : 0
     )
     const handleWindowSize = useCallback(() => {
         setWindowWidthState(window.innerWidth)
     }, [])
 
     const [currentScrollHeight, setCurrentScrollHeight] = useState(
-        window.scrollY
+        isBrowser ? window.scrollY : 0
     )
     const [wholeScrollHeight, setWholeScrollHeight] = useState(0)
     const [scrollRatio, setScrollRatio] = useState(0)
@@ -111,7 +112,12 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         setWholeScrollHeight(_scrollAbleHeight)
     }
 
-    const linkList = ["post", "portfolio", "contact"]
+    const linkList = ["blog", "portfolio", "contact"]
+    const linkIconList = [
+        { iconName: "ri-github-fill ri-xl" },
+        { iconName: "ri-google-fill ri-xl" },
+        { iconName: "ri-kakao-talk-fill ri-xl" },
+    ]
 
     return (
         <>
@@ -139,7 +145,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
             )}
             {/* scrollbar */}
             <ScrollNav scrollRatio={scrollRatio} />
-            <main className={mainStyles.main}>
+            <main className={styles.main}>
                 {/* profile */}
                 <aside className={styles.main__nav} ref={mainNavRef}>
                     <div className={styles.main__nav__header}>
@@ -157,25 +163,51 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                             ""
                         )}
                     </div>
-                    <section s-padding-x="16px">
+                    <section
+                        s-height="100%"
+                        s-box="v-box"
+                        s-justify="space-between"
+                    >
                         {/* profile */}
-                        <section
-                            className={styles.main__nav__profile}
-                        ></section>
-                        <ul className={styles.main__nav__list}>
-                            {linkList.map((link, index) => {
-                                return (
-                                    <li
-                                        className={styles.main__nav__listItem}
-                                        key={index}
-                                    >
-                                        <h2 s-font-weight="300">{link}</h2>
-                                    </li>
-                                )
-                            })}
-                        </ul>
+                        <section s-padding-x="16px">
+                            <section
+                                className={styles.main__nav__profile}
+                            ></section>
+                            <ul className={styles.main__nav__list}>
+                                {linkList.map((link, index) => {
+                                    return (
+                                        <li
+                                            className={
+                                                styles.main__nav__listItem
+                                            }
+                                            key={index}
+                                        >
+                                            <Link to={`/${link}`}>
+                                                <h2 s-font-weight="300">
+                                                    {link}
+                                                </h2>
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </section>
+                        <section className={styles.main__nav__contact}>
+                            {/* icons */}
+                            <div s-box="h-box" s-gap="2px">
+                                {linkIconList.map((linkIcon, index) => {
+                                    return (
+                                        <Icon
+                                            iconName={linkIcon.iconName}
+                                            type="text"
+                                            size="xl"
+                                            key={index}
+                                        />
+                                    )
+                                })}
+                            </div>
+                        </section>
                     </section>
-                    <section>{/* icons */}</section>
                 </aside>
 
                 {/* post */}
@@ -186,7 +218,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                         s-margin-btm="16px"
                         s-padding-btm="8px"
                     >
-                        My project
+                        {pageTitle === "coffee.log" ? "My project" : pageTitle}
                     </h1>
                     {/* {windowDispatch.windowSizeState.width < 757 ? (
                         <Button

@@ -1,8 +1,6 @@
 @charset "utf-8";
-
 @import "../variables";
 @import "../mixin/mixin";
-
 .mainHeader {
     position: fixed;
     top: 0;
@@ -16,4 +14,15 @@
     backdrop-filter: blur(120px);
     z-index: 100;
     @include beforeLine($btm: $sy-line);
+    & > div > div {
+        border-radius: 4px;
+        transition: 0.4s;
+        background: rgba($sy-gray-01, 0);
+        &:hover {
+            background: rgba($sy-gray-01, 0.8);
+            h2 {
+                color: rgba($sy-pri, 1);
+            }
+        }
+    }
 }

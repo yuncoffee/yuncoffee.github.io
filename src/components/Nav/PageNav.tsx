@@ -22,34 +22,46 @@ function PageNav({ windowWidthState, handleToggleMainNav }: iPageNav) {
 
     return (
         <nav className={styles.pageNav}>
-            {windowWidthState > 757 ? (
-                <div s-box="h-box" s-gap="8px">
-                    <Link to="/">
-                        <Button
-                            name="Home"
-                            type={pathState === "/" ? "block" : "block-ghost"}
+            <div>
+                {windowWidthState > 757 ? (
+                    <div s-box="h-box" s-gap="4px">
+                        <Field
+                            type="text"
+                            s_type="block-line"
+                            placeholder="검색"
                         />
-                    </Link>
-                    <Link to="/info">
-                        <Button
-                            name="About"
-                            type={
-                                pathState === "/info" ? "block" : "block-ghost"
-                            }
+                        <Button type="block" name="검색" />
+                        {/* <Link to="/">
+                            <Button
+                                name="Home"
+                                type={
+                                    pathState === "/" ? "block" : "block-ghost"
+                                }
+                            />
+                        </Link>
+                        <Link to="/info">
+                            <Button
+                                name="About"
+                                type={
+                                    pathState === "/info"
+                                        ? "block"
+                                        : "block-ghost"
+                                }
+                            />
+                        </Link> */}
+                    </div>
+                ) : (
+                    <div>
+                        <Icon
+                            iconName="ri-menu-fill"
+                            type="block-ghost"
+                            onClick={() => {
+                                handleToggleMainNav()
+                            }}
                         />
-                    </Link>
-                </div>
-            ) : (
-                <div>
-                    <Icon
-                        iconName="ri-menu-fill"
-                        type="block-ghost"
-                        onClick={() => {
-                            handleToggleMainNav()
-                        }}
-                    />
-                </div>
-            )}
+                    </div>
+                )}
+            </div>
             {/* <form s-box="h-box" s-gap="4px" s-length="100%">
                 <Field
                     length={windowWidthState > 757 ? "" : "100%"}

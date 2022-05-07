@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 @import "../variables";
 @import "../mixin/mixin";
 
@@ -9,12 +8,12 @@
     left: 0;
     height: 48px;
     padding: 0 16px;
-    // position: relative;
     width: 100%;
     background: rgba($sy-bg, 1);
     box-shadow: $shadow-btm rgba($sy-black, 0.1);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 1000;
     @include beforeLine($top: $sy-line);
 }

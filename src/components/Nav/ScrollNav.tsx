@@ -6,10 +6,6 @@ interface iScrollNav {
 }
 
 function ScrollNav({ scrollRatio }: iScrollNav) {
-    useEffect(() => {
-        console.log(scrollRatio)
-    }, [scrollRatio])
-
     return (
         <section
             s-length="100%"
@@ -19,7 +15,9 @@ function ScrollNav({ scrollRatio }: iScrollNav) {
             <div
                 className={styles.scrollNav__thumb}
                 style={
-                    scrollRatio ? { width: `${scrollRatio}%` } : { width: 0 }
+                    scrollRatio !== NaN && scrollRatio
+                        ? { width: `${scrollRatio}%` }
+                        : { width: 0 }
                 }
             />
         </section>

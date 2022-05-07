@@ -19,6 +19,21 @@
     z-index: 1;
 
     @include beforeLine($btm: $sy-line);
+
+    & > div {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        gap: 4px;
+        justify-content: flex-end;
+
+        @include mobile() {
+            justify-content: flex-start;
+        }
+    }
+
     a {
         @include h4();
     }

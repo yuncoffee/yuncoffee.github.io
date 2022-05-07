@@ -10,7 +10,7 @@ function PageHeader({ title }: iPageHeader) {
     return (
         <header className={styles.mainHeader}>
             <div s-box="h-box" s-justify="space-between" s-padding-x="16px">
-                <div s-box="h-box" s-align="center">
+                <div s-box="h-box" s-align="center" s-padding-x="8px">
                     <Link to="/">
                         {/* <StaticImage
                             src="../../images/logo/my_logo.png"
