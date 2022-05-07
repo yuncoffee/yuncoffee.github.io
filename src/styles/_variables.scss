@@ -1,20 +1,22 @@
 @charset "utf-8";
 
 // color
-$sy-pri: #206fd6;
-$sy-pri-01: #004bb7;
+// $sy-pri: #458d6b;
+$sy-pri: #333333;
+$sy-sec: #dbd1cc;
+// $sy-bg: #faf7ee;
+$sy-bg: #e1ded3;
+$sy-line: #68635e;
 
 $sy-white: #ffffff;
 $sy-black: #2b2b2b;
-$sy-gray-01: #f8f8f8;
-$sy-gray-02: #f6f6f6;
-$sy-gray-03: #ebebeb;
-$sy-gray-04: #e0e0e0;
-$sy-gray-05: #c4c4c4;
-$sy-gray-06: #868686;
-$sy-gray-07: #626262;
-$sy-gray-08: #424242;
-$sy-gray-09: #333333;
+$sy-gray-01: #fafafa;
+$sy-gray-02: #e0e0e0;
+$sy-gray-03: #c9c9c9;
+$sy-gray-04: #aaaaaa;
+$sy-gray-05: #868686;
+$sy-gray-06: #666666;
+$sy-gray-07: #424242;
 
 $sy-red: #ff5b5b;
 $sy-yellow: #ffd951;
@@ -24,55 +26,6 @@ $sy-blue: #0089d6;
 $sy-purple: #ad28dc;
 $sy-pink: #ff5c9a;
 $sy-livid: #aac5da;
-
-//csp color
-// aws 한정
-$sy-indigo-aws: #232f3e;
-$sy-yellow-aws: #ffa235;
-$color-aws: $sy-indigo-aws;
-// azure
-$color-azure: #0089d6;
-// ncloud
-$color-ncloud: #3cdf98;
-
-// default color
-$bg-color: $sy-gray-01;
-$txt-color: #333;
-
-$color-txt: $sy-gray-01;
-$color-bg: $sy-gray-09;
-
-// component color
-$color-default: $sy-gray-05;
-// default-bg color
-$color-base: $sy-white;
-// modal-bg color
-$color-modal: $sy-white;
-// input-bg color
-$color-inputBg: $sy-gray-03;
-// pageHeader-bg color
-$color-pageHeader: $sy-white;
-// projectHeader-bg color
-$color-projectHeader: $sy-white;
-// nav-bg color
-$color-nav: $sy-white;
-// aside-bg color
-$color-aside: $sy-gray-03;
-// footer-bg color
-$color-footer: $sy-white;
-
-$color-theme: $sy-pri;
-
-// codeEditor start
-// monokai
-$edit-default: #f8f8f8;
-$edit-string: #ffd866;
-$edit-function: #78dce8;
-$edit-operator: #ff6188;
-$edit-numeric: #ab9df2;
-$edit-bg: #2a314b;
-$edit-gutter: #2a314b;
-// codeEditor end
 
 $borderSize: 1.5px;
 

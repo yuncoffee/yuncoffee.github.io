@@ -1,6 +1,6 @@
 import React from "react"
-import styles from "../../../../styles/elements/_Field.module.scss"
-import { iTextArea } from "../../../models/components"
+import * as styles from "../../../styles/elements/_Field.module.scss"
+// import { iTextArea } from "../../../models/components"
 
 const Textarea = ({
     s_type = "block",
@@ -18,7 +18,7 @@ const Textarea = ({
     onChange,
     ly_value,
     readOnly,
-}: iTextArea) => {
+}: any) => {
     return (
         <>
             <textarea

@@ -401,12 +401,12 @@ $borderRadius: 4px;
     }
 
     .isActive {
-        .select__customOption {
-            opacity: 1;
-            backdrop-filter: blur(10px);
-            // 상위로
-            z-index: 10;
-        }
+        // .select__customOption {
+        //     opacity: 1;
+        //     backdrop-filter: blur(10px);
+        //     // 상위로
+        //     z-index: 10;
+        // }
 
         .select__icon {
             i {
@@ -540,93 +540,93 @@ $borderRadius: 4px;
     }
 }
 
-.select__customOption {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    width: calc(100% + 3px);
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    overflow: hidden;
-    transition: 0.4s;
-    opacity: 0;
-    transition-property: height, opacity, transform, overflow;
-    height: 1px;
-    margin: -1px;
-    border: $borderSize solid;
-    border-color: rgba($borderColor, 1);
-    background: linear-gradient(
-            180deg,
-            rgba($backColor, 0) 0%,
-            rgba($borderColor, 0) 100%
-        ),
-        rgba($borderColor, 0);
-    padding: 1.5px;
+// .select__customOption {
+//     position: absolute;
+//     top: 0;
+//     left: 0px;
+//     width: calc(100% + 3px);
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1px;
+//     overflow: hidden;
+//     transition: 0.4s;
+//     opacity: 0;
+//     transition-property: height, opacity, transform, overflow;
+//     height: 1px;
+//     margin: -1px;
+//     border: $borderSize solid;
+//     border-color: rgba($borderColor, 1);
+//     background: linear-gradient(
+//             180deg,
+//             rgba($backColor, 0) 0%,
+//             rgba($borderColor, 0) 100%
+//         ),
+//         rgba($borderColor, 0);
+//     padding: 1.5px;
 
-    &[ly-type="box"] {
-        border-radius: 0;
-        background: linear-gradient(
-                180deg,
-                rgba($backColor, 0.6) 0%,
-                rgba($borderColor, 0.6) 100%
-            ),
-            rgba($borderColor, 0.6);
-        color: rgba($textColor, 1);
-        border-color: rgba($borderColor, 1);
-    }
+//     &[ly-type="box"] {
+//         border-radius: 0;
+//         background: linear-gradient(
+//                 180deg,
+//                 rgba($backColor, 0.6) 0%,
+//                 rgba($borderColor, 0.6) 100%
+//             ),
+//             rgba($borderColor, 0.6);
+//         color: rgba($textColor, 1);
+//         border-color: rgba($borderColor, 1);
+//     }
 
-    &[ly-type="box-line"] {
-        border-radius: 0;
-        background: linear-gradient(
-                180deg,
-                rgba($backColor, 0) 0%,
-                rgba($borderColor, 0) 100%
-            ),
-            rgba($borderColor, 0);
-        color: rgba($textColor, 1);
-        border-color: rgba($borderColor, 1);
-    }
+//     &[ly-type="box-line"] {
+//         border-radius: 0;
+//         background: linear-gradient(
+//                 180deg,
+//                 rgba($backColor, 0) 0%,
+//                 rgba($borderColor, 0) 100%
+//             ),
+//             rgba($borderColor, 0);
+//         color: rgba($textColor, 1);
+//         border-color: rgba($borderColor, 1);
+//     }
 
-    &[ly-type="block"] {
-        border-radius: $borderRadius;
-        background: linear-gradient(
-                180deg,
-                rgba($backColor, 0.6) 0%,
-                rgba($borderColor, 0.6) 100%
-            ),
-            rgba($borderColor, 0.6);
-        color: rgba($textColor, 1);
-        border-color: rgba($borderColor, 1);
-    }
+//     &[ly-type="block"] {
+//         border-radius: $borderRadius;
+//         background: linear-gradient(
+//                 180deg,
+//                 rgba($backColor, 0.6) 0%,
+//                 rgba($borderColor, 0.6) 100%
+//             ),
+//             rgba($borderColor, 0.6);
+//         color: rgba($textColor, 1);
+//         border-color: rgba($borderColor, 1);
+//     }
 
-    &[ly-type="block-line"] {
-        border-radius: $borderRadius;
-        background: linear-gradient(
-                180deg,
-                rgba($backColor, 0) 0%,
-                rgba($borderColor, 0) 100%
-            ),
-            rgba($borderColor, 0);
-        color: rgba($textColor, 1);
-        border-color: rgba($borderColor, 1);
-    }
-}
+//     &[ly-type="block-line"] {
+//         border-radius: $borderRadius;
+//         background: linear-gradient(
+//                 180deg,
+//                 rgba($backColor, 0) 0%,
+//                 rgba($borderColor, 0) 100%
+//             ),
+//             rgba($borderColor, 0);
+//         color: rgba($textColor, 1);
+//         border-color: rgba($borderColor, 1);
+//     }
+// }
 
-.select__customOption__item {
-    width: 100%;
-    padding-left: 8px;
-    border: $borderSize solid rgba($borderColor, 0);
-    word-break: break-all;
-    background: rgba($sy-gray-02, 0.4);
-    backdrop-filter: blur(30px);
+// .select__customOption__item {
+//     width: 100%;
+//     padding-left: 8px;
+//     border: $borderSize solid rgba($borderColor, 0);
+//     word-break: break-all;
+//     background: rgba($sy-gray-02, 0.4);
+//     backdrop-filter: blur(30px);
 
-    &:hover {
-        background: rgba($sy-gray-05, 0.3);
-        border-radius: 2px;
-        cursor: pointer;
-    }
-}
+//     &:hover {
+//         background: rgba($sy-gray-05, 0.3);
+//         border-radius: 2px;
+//         cursor: pointer;
+//     }
+// }
 
 .toggle {
     display: inline-flex;

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import styles from "../../../styles/elements/_Field.module.scss"
-import { iToggle } from "../../../models/components"
+import * as styles from "../../../styles/elements/_Field.module.scss"
 
 const Toggle = ({
     toggleState = false,
@@ -10,7 +9,7 @@ const Toggle = ({
     ly_size = "sm",
     disabled,
     ly_ref,
-}: iToggle) => {
+}: any) => {
     const toggleRef = useRef<any>()
     let isDisabled = disabled
 

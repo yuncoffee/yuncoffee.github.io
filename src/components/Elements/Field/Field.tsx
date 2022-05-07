@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../../../../styles/elements/_Field.module.scss"
+import * as styles from "../../../styles/elements/_Field.module.scss"
 import { iField } from "../../../models/components"
 
 const Field = ({

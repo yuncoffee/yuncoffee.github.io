@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
-import styles from "../../../styles/elements/_Field.module.scss"
-import { iRadio } from "../../../models/components"
+import * as styles from "../../../styles/elements/_Field.module.scss"
+// import { iRadio } from "../../../models/components"
 
 const Radio = ({
     group,
@@ -14,7 +14,7 @@ const Radio = ({
     onChange,
     radioState,
     setRadioState,
-}: iRadio) => {
+}: any) => {
     return (
         <>
             <div

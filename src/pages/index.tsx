@@ -17,59 +17,14 @@ import Icon from "../components/Elements/Button/Icon"
 const IndexPage = ({ data }: any) => {
     const isBrowser = typeof window !== "undefined"
     const windowDispatch = useContext(windowContext)
-    const mainNavRef = useRef<HTMLElement>(null)
-
-    const handleToggleMainNav = () => {
-        if (windowDispatch.windowSizeState.width > 757) {
-            mainNavRef.current?.classList.remove(styles.isActive)
-            return
-        } else {
-            mainNavRef.current?.classList.contains(styles.isActive)
-                ? mainNavRef.current?.classList.remove(styles.isActive)
-                : mainNavRef.current?.classList.add(styles.isActive)
-        }
-    }
 
     return (
         <>
             <Helmet>
                 <title>coffee.log</title>
-                <link
-                    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-                    rel="stylesheet"
-                ></link>
             </Helmet>
             <Layout pageTitle="coffee.log">
-                {/* profile */}
-                <aside className={styles.main__nav} ref={mainNavRef}>
-                    <div
-                        s-box="h-box"
-                        s-justify="space-between"
-                        s-align="center"
-                    >
-                        <h1>대 공사중!</h1>
-                        <Icon
-                            onClick={() => {
-                                handleToggleMainNav()
-                            }}
-                        />
-                    </div>
-                </aside>
-
-                {/* post */}
-                <section className={styles.main__contents}>
-                    {windowDispatch.windowSizeState.width < 757 ? (
-                        <Button
-                            name="출력버튼"
-                            onClick={() => {
-                                handleToggleMainNav()
-                            }}
-                        />
-                    ) : (
-                        ""
-                    )}
-                    {isBrowser ? <PostList data={data} /> : ""}
-                </section>
+                <>{isBrowser ? <PostList data={data} /> : ""}</>
             </Layout>
         </>
     )

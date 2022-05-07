@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
-import styles from "../../../../styles/elements/_Field.module.scss"
+import * as styles from "../../../styles/elements/_Field.module.scss"
 
-import { iSelect } from "../../../models/components"
+// import { iSelect } from "../../../models/components"
 
 const Select = ({
     name,
@@ -16,7 +16,7 @@ const Select = ({
     ly_ref,
     index,
     onChange,
-}: iSelect) => {
+}: any) => {
     // 각 list-item에 state 바인딩
     const handleSelectItem = (e: any) => {
         if (setSelectState !== undefined) {
@@ -91,7 +91,7 @@ const Select = ({
                         <i className="ri-arrow-drop-down-fill ri-1x"></i>
                     </div>
                     <ul
-                        className={styles.select__customOption}
+                        // className={styles.select__customOption}
                         ref={optionRef}
                         ly-type={ly_optionType}
                     >
@@ -99,9 +99,9 @@ const Select = ({
                             return (
                                 <li
                                     key={i}
-                                    className={
-                                        styles.select__customOption__item
-                                    }
+                                    // className={
+                                    //     styles.select__customOption__item
+                                    // }
                                     onClick={(e) => {
                                         handleSelectItem(e)
                                     }}

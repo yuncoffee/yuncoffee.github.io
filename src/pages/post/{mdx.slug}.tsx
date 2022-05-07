@@ -9,8 +9,10 @@ const Item = ({ data }: any) => {
     // const item = data.item
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
-            <p>{data.mdx.slug}</p>
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            <>
+                <p>{data.mdx.slug}</p>
+                <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            </>
         </Layout>
     )
 }
