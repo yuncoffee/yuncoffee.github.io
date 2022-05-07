@@ -12,10 +12,9 @@ function PostList({ data }: any) {
                             <div className={styles.post__img}></div>
                             <div s-padding="8px">
                                 <h2>{node.frontmatter.title}</h2>
+                                <p>Posted: {node.frontmatter.date}</p>
+                                <Link to={`/post/${node.slug}/`}>go to</Link>
                             </div>
-
-                            <p>Posted: {node.frontmatter.date}</p>
-                            <Link to={`/post/${node.slug}/`}>go to</Link>
                         </article>
                     </Link>
                 )

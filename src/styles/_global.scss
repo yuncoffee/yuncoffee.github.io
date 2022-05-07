@@ -339,6 +339,7 @@ body {
 
     @include mobile() {
         overflow-y: scroll;
+        @include scrollbar($bg-a: 1, $bg-c: $sy-bg);
     }
 }
 

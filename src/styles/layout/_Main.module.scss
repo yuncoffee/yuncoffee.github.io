@@ -6,8 +6,9 @@
 .main {
     // max-width: 1280px;
     // height: calc(100% - 48px);
+    // min-height: 1280px;
     height: 100%;
-    padding: 100px 16px 16px 16px;
+    padding: 100px 16px 64px 16px;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -22,22 +23,25 @@
         max-width: 320px;
         width: 100%;
         min-width: 200px;
-        padding: 16px;
+
         background: rgba($sy-white, 0);
-        border: $borderSize solid rgba($sy-gray-04, 1);
+        border: $borderSize solid rgba($sy-line, 1);
         border-radius: 4px;
         transition: 0.4s;
 
         @include mobile() {
-            position: absolute;
+            position: fixed;
             left: 0;
-            top: 40px;
-            height: calc(100% - 40px);
-            background: rgba($sy-white, 0.1);
+            top: 48px;
+            height: calc(100% - 48px);
+            min-width: 271px;
+            max-height: calc(100vh - 48px);
+            background: rgba($sy-bg, 1);
             border: $borderSize solid rgba($sy-gray-04, 0);
             box-shadow: $shadow-default rgba($sy-black, 0.2);
-            backdrop-filter: blur(24px);
+            // backdrop-filter: blur(24px);
             transform: translateX(-320px);
+            z-index: 101;
             // 상단 Tab보다 위에
             z-index: 5;
             // height: 100%;
@@ -46,17 +50,61 @@
         &.isActive {
             transform: translateX(0);
         }
+
+        &__header {
+            padding: 16px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include beforeLine($btm: $sy-line);
+        }
+
+        &__profile {
+            min-height: 240px;
+        }
+
+        &__list {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            // gap: 8px;
+            @include beforeLine($top: $sy-line, $btm: $sy-line);
+        }
+
+        &__listItem {
+            position: relative;
+            padding: 8px;
+            text-align: center;
+            transition: 0.4s;
+            // background: rgba($sy-black, 0);
+
+            &:hover {
+                background: rgba($sy-black, 1);
+                color: rgba($sy-white, 1);
+            }
+
+            &:not(:last-child) {
+                @include beforeLine($btm: $sy-line);
+            }
+        }
     }
 
     &__contents {
         width: 100%;
         padding: 16px;
         background: rgba($sy-gray-01, 0);
-        border: $borderSize solid rgba($sy-gray-04, 1);
+        border: $borderSize solid rgba($sy-line, 1);
         border-radius: 4px;
+
+        & > h1 {
+            position: relative;
+            @include beforeLine($btm: $sy-line);
+        }
     }
 }
 
-.con_postList {
-    display: flex;
-}
+// .con_postList {
+//     display: flex;
+// }

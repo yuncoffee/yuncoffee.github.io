@@ -4,20 +4,21 @@ import * as styles from "../../styles/layout/_Nav.module.scss"
 import Button from "../Elements/Button/Button"
 import { Router } from "@reach/router"
 import Field from "../Elements/Field/Field"
+import Icon from "../Elements/Button/Icon"
 
 interface iPageNav {
     windowWidthState: number
+    handleToggleMainNav: () => void
 }
 
-function PageNav({ windowWidthState }: iPageNav) {
+function PageNav({ windowWidthState, handleToggleMainNav }: iPageNav) {
     const [pathState, setPathState] = useState(window.location.pathname)
 
     useEffect(() => {
+        console.log(windowWidthState)
         setPathState(window.location.pathname)
         console.log(pathState)
     }, [pathState])
-
-    console.log(windowWidthState)
 
     return (
         <nav className={styles.pageNav}>
@@ -39,9 +40,17 @@ function PageNav({ windowWidthState }: iPageNav) {
                     </Link>
                 </div>
             ) : (
-                ""
+                <div>
+                    <Icon
+                        iconName="ri-menu-fill"
+                        type="block-ghost"
+                        onClick={() => {
+                            handleToggleMainNav()
+                        }}
+                    />
+                </div>
             )}
-            <form s-box="h-box" s-gap="4px" s-length="100%">
+            {/* <form s-box="h-box" s-gap="4px" s-length="100%">
                 <Field
                     length={windowWidthState > 757 ? "" : "100%"}
                     s_type="block-line"
@@ -49,7 +58,7 @@ function PageNav({ windowWidthState }: iPageNav) {
                     placeholder="검색하시던가요"
                 />
                 <Button name="검색" />
-            </form>
+            </form> */}
         </nav>
     )
 }

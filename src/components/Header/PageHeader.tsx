@@ -16,9 +16,13 @@ function PageHeader({ title }: iPageHeader) {
                             src="../../images/logo/my_logo.png"
                             alt="커피곰의 로고입니다."
                         /> */}
-                        <h1 s-font-type="fugaz" s-color="sy-pri">
-                            COFFEE.log
-                        </h1>
+                        <h2
+                            s-font-size="h1"
+                            s-font-weight="200"
+                            s-color="sy-pri"
+                        >
+                            coffee.log
+                        </h2>
                     </Link>
                 </div>
             </div>

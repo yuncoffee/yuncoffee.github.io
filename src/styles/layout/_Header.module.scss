@@ -12,7 +12,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    background: rgba($sy-bg, 1);
+    background: rgba($sy-bg, 0);
+    backdrop-filter: blur(120px);
     z-index: 100;
     @include beforeLine($btm: $sy-line);
 }
