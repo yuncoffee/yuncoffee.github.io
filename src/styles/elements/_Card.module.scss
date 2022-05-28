@@ -43,3 +43,48 @@
     }
 }
 
+.carrerCard {
+    display: flex;
+    align-items: flex-start;
+    align-self: flex-end;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: calc(100% - 40px);
+    padding: 8px;
+    position: relative;
+    background: rgba($sy-white, 0.1);
+    border: $borderSize solid rgba($sy-white, 0);
+    border-radius: 4px;
+
+    &:hover {
+        transition: 0.4s;
+        background: rgba($sy-white, 0.4);
+        border: $borderSize solid rgba($sy-white, 1);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        // top: 40px;
+        top: 50%;
+        left: -28px;
+        transform: translateY(-50%);
+        width: 2px;
+        height: calc(100% + 20px);
+        background: rgba($sy-gray-04, 1);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -34px;
+        border-radius: 50%;
+        background: rgba($sy-pri, 1);
+        border: $borderSize solid rgba($sy-white, 1);
+    }
+}

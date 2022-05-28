@@ -20,6 +20,7 @@ import PageNav from "../Nav/PageNav"
 import ScrollNav from "../Nav/ScrollNav"
 import { Helmet } from "react-helmet"
 import * as styles from "../../styles/layout/_Main.module.scss"
+import { Router } from "@reach/router"
 interface iLayout {
     pageTitle?: string
     children: React.ReactChild
@@ -31,11 +32,17 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         query {
             site {
                 siteMetadata {
+                    siteUrl
                     title
                 }
             }
         }
     `)
+
+    useEffect(() => {
+        const url = window.location.pathname
+        console.log(url)
+    }, [])
 
     const mainNavRef = useRef<HTMLElement>(null)
     const [windowWidthState, setWindowWidthState] = useState<number>(
@@ -50,6 +57,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
     )
     const [wholeScrollHeight, setWholeScrollHeight] = useState(0)
     const [scrollRatio, setScrollRatio] = useState(0)
+    const [currentPage, setCurrentPage] = useState(window.location.pathname)
 
     useEffect(() => {
         window.addEventListener("resize", throttle(handleWindowSize, 200))
@@ -178,7 +186,9 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                                     return (
                                         <li
                                             className={
-                                                styles.main__nav__listItem
+                                                currentPage === `/${link}`
+                                                    ? `${styles.main__nav__listItem} ${styles.isActive}`
+                                                    : styles.main__nav__listItem
                                             }
                                             key={index}
                                         >

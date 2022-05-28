@@ -82,8 +82,20 @@
             transition: 0.4s;
             // background: rgba($sy-black, 0);
 
-            &:hover {
+            &.isActive {
                 background: rgba($sy-black, 1);
+
+                &:hover {
+                    background: rgba($sy-black, 1);
+                }
+
+                h2 {
+                    color: rgba($sy-white, 1);
+                }
+            }
+
+            &:hover {
+                background: rgba($sy-black, 0.5);
 
                 h2 {
                     color: rgba($sy-white, 1);
@@ -116,6 +128,9 @@
 
     &__contents {
         width: 100%;
+        max-height: 100%;
+        height: 100%;
+        overflow-y: scroll;
         padding: 16px;
         background: rgba($sy-gray-01, 0);
         border: $borderSize solid rgba($sy-line, 1);
@@ -140,8 +155,31 @@
     background: rgba($sy-black, 1);
 }
 
+.con_stack {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stack {
+    padding: 8px;
+    border: $borderSize solid rgba($sy-pri, 1);
+    width: calc(20% - 6.4px);
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
 .pageContact {
     &__section {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0;
+        gap: 16px;
+
         h3 {
             position: relative;
             @include beforeLine($btm: $sy-line);
