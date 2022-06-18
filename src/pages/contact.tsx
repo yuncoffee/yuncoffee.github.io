@@ -1,10 +1,15 @@
-import React from "react"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { lowerCase } from "lodash"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import Button from "../components/Elements/Button/Button"
 import CarrerCard from "../components/Elements/Card/CarrerCard"
 import Layout from "../components/Layout/Layout"
+import { windowContext } from "../components/Provider/Provider"
 import * as styles from "../styles/layout/_Main.module.scss"
 
 function Contact() {
+    const stackRef = useRef<HTMLDivElement[]>([])
+
     const EDUINFO = {
         term: "2015.02 - 2021.02",
         company: "을지대학교",
@@ -28,17 +33,29 @@ function Contact() {
     ]
 
     const STACKINFOLIST = [
-        { name: "Ps", imgPath: "" },
-        { name: "Ai", imgPath: "" },
-        { name: "Id", imgPath: "" },
-        { name: "Figma", imgPath: "" },
-        { name: "React", imgPath: "" },
-        { name: "HTML", imgPath: "" },
-        { name: "CSS", imgPath: "" },
-        { name: "JS", imgPath: "" },
-        { name: "SCSS", imgPath: "" },
-        { name: "TS", imgPath: "" },
+        { name: "Ps", src: "ps" },
+        { name: "Ai", src: "ai" },
+        { name: "Id", src: "id" },
+        { name: "Figma", src: "figma" },
+        { name: "React", src: "react" },
+        { name: "HTML", src: "html" },
+        { name: "CSS", src: "css" },
+        { name: "JS", src: "js" },
+        { name: "SCSS", src: "scss" },
+        { name: "TS", src: "ts" },
     ]
+
+    const [isHoverStack, setIsHoverStack] = useState(-1)
+
+    const handleStackMouseOver = (index: number) => {
+        setIsHoverStack(index)
+    }
+
+    const windowDispatch = useContext(windowContext)
+
+    useEffect(() => {
+        console.log(windowDispatch.windowSizeState)
+    }, [])
 
     return (
         <Layout pageTitle="Contact">
@@ -49,15 +66,35 @@ function Contact() {
                     s-align="center"
                 >
                     <article className={styles.profile} />
-                    <Button name="문의하기" size="xl" />
+                    <Button name="Contact" size="lg" />
                 </section>
                 <section className={styles.pageContact__section}>
                     <h3 s-font-weight="300">Stack</h3>
                     <section className={styles.con_stack}>
                         {STACKINFOLIST.map((stackinfo, index) => {
                             return (
-                                <div className={styles.stack} key={index}>
-                                    {stackinfo.name}
+                                <div
+                                    className={
+                                        isHoverStack === index
+                                            ? `${styles.stack} ${styles.isActive}`
+                                            : styles.stack
+                                    }
+                                    ref={(el) => {
+                                        if (el) {
+                                            stackRef.current[index] = el
+                                        }
+                                    }}
+                                    onMouseOver={() => {
+                                        handleStackMouseOver(index)
+                                    }}
+                                    onMouseLeave={() => {
+                                        setIsHoverStack(-1)
+                                    }}
+                                    data-name={stackinfo.name}
+                                    key={index}
+                                >
+                                    <div data-name={stackinfo.src} />
+                                    <h6>{stackinfo.name}</h6>
                                 </div>
                             )
                         })}

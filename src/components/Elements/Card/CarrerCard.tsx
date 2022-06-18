@@ -1,5 +1,8 @@
-import React from "react"
+import _ from "lodash"
+import React, { useContext, useEffect, useState } from "react"
 import * as styles from "../../../styles/elements/_Card.module.scss"
+import { checkDeviceType } from "../../../utils/checkDevice"
+import { windowContext } from "../../Provider/Provider"
 
 interface iCarrerCard {
     carrerInfo: {
@@ -11,10 +14,39 @@ interface iCarrerCard {
 }
 
 function CarrerCard({ carrerInfo }: iCarrerCard) {
+    const [deviceType, setDeviceType] = useState<number | undefined | null>(
+        null
+    )
+
+    const windowDispatch = useContext(windowContext)
+
+    useEffect(() => {
+        const currentDeviceType = checkDeviceType(
+            windowDispatch.windowSizeState.width
+        )
+        if (deviceType === currentDeviceType) {
+            return
+        } else {
+            setDeviceType(currentDeviceType)
+        }
+        console.log(currentDeviceType)
+    }, [windowDispatch])
+
+    useEffect(() => {
+        console.log(deviceType)
+    }, [deviceType])
+
     return (
         <article className={styles.carrerCard}>
             <h4 s-color="sy-pri">{carrerInfo.term}</h4>
-            <div s-box="v-box" s-align="flex-end">
+            <div
+                s-box="v-box"
+                s-align="flex-end"
+                s-length={deviceType === 0 ? "100%" : undefined}
+                // s-length={
+                //     windowDispatch.windowSizeState.width < 757 ? "100%" : ""
+                // }
+            >
                 <h4 s-font-weight="500" s-color="sy-gray-07">
                     {carrerInfo.company}
                 </h4>

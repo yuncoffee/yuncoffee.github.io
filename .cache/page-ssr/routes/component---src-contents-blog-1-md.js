@@ -55,13 +55,9 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, `Singing`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("li", {
     parentName: "ul"
-  }, `Eating potato-based foods`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `정말로 되는걸까?`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h2", null, `정말인가요? 이제 시작해도 되나요?`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("code", {
+  }, `Eating potato-based foods`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `정말로 되는걸까?`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h2", null, `TEST?`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("code", {
     parentName: "pre"
-  }, `public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
+  }, `sd
 `)));
 }
 ;

@@ -20,7 +20,6 @@ import PageNav from "../Nav/PageNav"
 import ScrollNav from "../Nav/ScrollNav"
 import { Helmet } from "react-helmet"
 import * as styles from "../../styles/layout/_Main.module.scss"
-import { Router } from "@reach/router"
 interface iLayout {
     pageTitle?: string
     children: React.ReactChild

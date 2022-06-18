@@ -1067,6 +1067,7 @@ var mainHeader = "_Header-module--mainHeader--Tmbyk";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "con_stack": () => (/* binding */ con_stack),
 /* harmony export */   "isActive": () => (/* binding */ isActive),
 /* harmony export */   "main": () => (/* binding */ main),
 /* harmony export */   "main__contents": () => (/* binding */ main__contents),
@@ -1077,7 +1078,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "main__nav__listItem": () => (/* binding */ main__nav__listItem),
 /* harmony export */   "main__nav__profile": () => (/* binding */ main__nav__profile),
 /* harmony export */   "pageContact__section": () => (/* binding */ pageContact__section),
-/* harmony export */   "profile": () => (/* binding */ profile)
+/* harmony export */   "profile": () => (/* binding */ profile),
+/* harmony export */   "stack": () => (/* binding */ stack)
 /* harmony export */ });
 // Exports
 var main = "_Main-module--main--2hP70";
@@ -1090,6 +1092,8 @@ var main__nav__listItem = "_Main-module--main__nav__listItem--wEDL3";
 var main__nav__contact = "_Main-module--main__nav__contact--BzxGF";
 var main__contents = "_Main-module--main__contents--J4738";
 var profile = "_Main-module--profile--pZTeT";
+var con_stack = "_Main-module--con_stack--XWvFS";
+var stack = "_Main-module--stack--yZTBG";
 var pageContact__section = "_Main-module--pageContact__section--GjFRS";
 
 
@@ -3371,7 +3375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _public_page_data_sq_d_3159585216_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/page-data/sq/d/3159585216.json */ "./public/page-data/sq/d/3159585216.json");
+/* harmony import */ var _public_page_data_sq_d_2402622801_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/page-data/sq/d/2402622801.json */ "./public/page-data/sq/d/2402622801.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
@@ -3429,7 +3433,11 @@ const Layout = ({
   children
 }) => {
   const isBrowser = typeof window !== "undefined";
-  const data = _public_page_data_sq_d_3159585216_json__WEBPACK_IMPORTED_MODULE_2__.data;
+  const data = _public_page_data_sq_d_2402622801_json__WEBPACK_IMPORTED_MODULE_2__.data;
+  (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    const url = window.location.pathname;
+    console.log(url);
+  }, []);
   const mainNavRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)(null);
   const {
     0: windowWidthState,
@@ -3450,6 +3458,10 @@ const Layout = ({
     0: scrollRatio,
     1: setScrollRatio
   } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(0);
+  const {
+    0: currentPage,
+    1: setCurrentPage
+  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(window.location.pathname);
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     window.addEventListener("resize", lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default()(handleWindowSize, 200));
     window.addEventListener("load", handleWindowSize);
@@ -3561,7 +3573,7 @@ const Layout = ({
     className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__nav__list
   }, linkList.map((link, index) => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("li", {
-      className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__nav__listItem,
+      className: currentPage === `/${link}` ? `${_styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__nav__listItem} ${_styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.isActive}` : _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__nav__listItem,
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: `/${link}`
@@ -5207,14 +5219,14 @@ module.exports = [];
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/3159585216.json":
+/***/ "./public/page-data/sq/d/2402622801.json":
 /*!***********************************************!*\
-  !*** ./public/page-data/sq/d/3159585216.json ***!
+  !*** ./public/page-data/sq/d/2402622801.json ***!
   \***********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"coffee.log"}}}}');
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"siteUrl":"https://yuncoffee.github.io","title":"coffee.log"}}}}');
 
 /***/ })
 
