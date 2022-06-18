@@ -31,7 +31,6 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         query {
             site {
                 siteMetadata {
-                    siteUrl
                     title
                 }
             }
