@@ -51,12 +51,6 @@ function Contact() {
         setIsHoverStack(index)
     }
 
-    const windowDispatch = useContext(windowContext)
-
-    useEffect(() => {
-        console.log(windowDispatch.windowSizeState)
-    }, [])
-
     return (
         <Layout pageTitle="Contact">
             {/* profile */}
