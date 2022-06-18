@@ -10,7 +10,7 @@ import React, {
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import { windowContext } from "../Provider/Provider"
-import { throttle } from "lodash"
+import { debounce, throttle } from "lodash"
 
 import Button from "../../components/Elements/Button/Button"
 import Icon from "../../components/Elements/Button/Icon"
@@ -56,6 +56,28 @@ const Layout = ({ pageTitle, children }: iLayout) => {
     const [wholeScrollHeight, setWholeScrollHeight] = useState(0)
     const [scrollRatio, setScrollRatio] = useState(0)
     const [currentPage, setCurrentPage] = useState(window.location.pathname)
+    const conContentsRef = useRef<HTMLElement>(null)
+    const contentsHeaderRef = useRef<HTMLDivElement>(null)
+    const [isContentsScroll, setIsContentsScroll] = useState(false)
+
+    const calcContentsScroll = () => {
+        let topPosition = conContentsRef.current?.scrollTop
+
+        if (topPosition! > 50) {
+            setIsContentsScroll(true)
+        } else if (isContentsScroll && topPosition! > 50) {
+            return
+        } else {
+            setIsContentsScroll(false)
+        }
+    }
+
+    useEffect(() => {
+        conContentsRef.current?.addEventListener(
+            "scroll",
+            throttle(calcContentsScroll, 500)
+        )
+    }, [])
 
     useEffect(() => {
         window.addEventListener("resize", throttle(handleWindowSize, 200))
@@ -118,7 +140,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         setWholeScrollHeight(_scrollAbleHeight)
     }
 
-    const linkList = ["blog", "portfolio", "contact"]
+    const linkList = ["blog", "project", "contact"]
     const linkIconList = [
         { iconName: "ri-github-fill ri-xl" },
         { iconName: "ri-google-fill ri-xl" },
@@ -155,7 +177,14 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                 {/* profile */}
                 <aside className={styles.main__nav} ref={mainNavRef}>
                     <div className={styles.main__nav__header}>
-                        <h3 s-font-weight="300">menu</h3>
+                        <h2
+                            s-font-size="h1"
+                            s-font-weight="200"
+                            s-color="sy-pri"
+                            s-padding-btm="8px"
+                        >
+                            Menu
+                        </h2>
                         {windowDispatch.windowSizeState.width < 757 ? (
                             <Icon
                                 iconName="ri-close-fill ri-xl"
@@ -219,15 +248,29 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                 </aside>
 
                 {/* post */}
-                <section className={styles.main__contents}>
-                    <h1
-                        s-color="sy-pri"
-                        s-font-weight="200"
-                        s-margin-btm="16px"
-                        s-padding-btm="8px"
+                <section className={styles.main__contents} ref={conContentsRef}>
+                    <div
+                        className={
+                            isContentsScroll
+                                ? `${styles.main__contents__header} ${styles.isActive}`
+                                : styles.main__contents__header
+                        }
+                        ref={contentsHeaderRef}
                     >
-                        {pageTitle === "coffee.log" ? "My project" : pageTitle}
-                    </h1>
+                        <h1
+                            s-length="100%"
+                            s-color="sy-pri"
+                            s-font-weight="200"
+                            s-padding-btm="8px"
+                        >
+                            {pageTitle === "coffee.log"
+                                ? "My project"
+                                : pageTitle}
+                        </h1>
+                    </div>
+                    <div className={styles.main__contents__body}>
+                        {children}
+                    </div>
                     {/* {windowDispatch.windowSizeState.width < 757 ? (
                         <Button
                             name="출력버튼"
@@ -238,8 +281,6 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                     ) : (
                         ""
                     )} */}
-
-                    {children}
                 </section>
             </main>
             <PageFooter />

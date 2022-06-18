@@ -54,7 +54,7 @@
         }
 
         &__header {
-            padding: 16px;
+            padding: 16px 16px 0 16px;
             position: relative;
             display: flex;
             justify-content: space-between;
@@ -131,16 +131,41 @@
         max-height: 100%;
         height: 100%;
         overflow-y: scroll;
-        padding: 16px;
+        padding: 0;
         background: rgba($sy-gray-01, 0);
         border: $borderSize solid rgba($sy-line, 1);
         border-radius: 4px;
+        position: relative;
 
         @include scrollbar($bg-a: 0);
 
-        & > h1 {
-            position: relative;
+        &__header {
+            padding: 16px 16px 0 16px;
+            border-right: $borderSize solid rgba($sy-line, 1);
+            z-index: 10;
+            background: rgba($sy-bg, 0);
+            box-shadow: $shadow-btm rgba($sy-black, 0);
+            backdrop-filter: blur(60px);
             @include beforeLine($btm: $sy-line);
+            transition: 0.4s;
+            &.isActive {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba($sy-bg, 0.9);
+                box-shadow: $shadow-btm rgba($sy-black, 0.2);
+            }
+
+            & > h1 {
+                position: relative;
+            }
+        }
+
+        &__body {
+            border-right: $borderSize solid rgba($sy-line, 1);
+            padding: 16px;
+            min-height: 100%;
         }
     }
 }

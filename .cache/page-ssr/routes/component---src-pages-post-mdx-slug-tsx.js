@@ -3508,7 +3508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _public_page_data_sq_d_2402622801_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/page-data/sq/d/2402622801.json */ "./public/page-data/sq/d/2402622801.json");
+/* harmony import */ var _public_page_data_sq_d_3159585216_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/page-data/sq/d/3159585216.json */ "./public/page-data/sq/d/3159585216.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
@@ -3566,7 +3566,7 @@ const Layout = ({
   children
 }) => {
   const isBrowser = typeof window !== "undefined";
-  const data = _public_page_data_sq_d_2402622801_json__WEBPACK_IMPORTED_MODULE_2__.data;
+  const data = _public_page_data_sq_d_3159585216_json__WEBPACK_IMPORTED_MODULE_2__.data;
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     const url = window.location.pathname;
     console.log(url);
@@ -3657,7 +3657,7 @@ const Layout = ({
     setWholeScrollHeight(_scrollAbleHeight);
   };
 
-  const linkList = ["blog", "portfolio", "contact"];
+  const linkList = ["blog", "project", "contact"];
   const linkIconList = [{
     iconName: "ri-github-fill ri-xl"
   }, {
@@ -3685,9 +3685,12 @@ const Layout = ({
     ref: mainNavRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
     className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__nav__header
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("h3", {
-    "s-font-weight": "300"
-  }, "menu"), windowDispatch.windowSizeState.width < 757 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(_components_Elements_Button_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("h2", {
+    "s-font-size": "h1",
+    "s-font-weight": "200",
+    "s-color": "sy-pri",
+    "s-padding-btm": "8px"
+  }, "Menu"), windowDispatch.windowSizeState.width < 757 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(_components_Elements_Button_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     iconName: "ri-close-fill ri-xl",
     type: "text" // size="xl"
     ,
@@ -5272,14 +5275,14 @@ module.exports = [];
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/2402622801.json":
+/***/ "./public/page-data/sq/d/3159585216.json":
 /*!***********************************************!*\
-  !*** ./public/page-data/sq/d/2402622801.json ***!
+  !*** ./public/page-data/sq/d/3159585216.json ***!
   \***********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"siteUrl":"https://yuncoffee.github.io","title":"coffee.log"}}}}');
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"coffee.log"}}}}');
 
 /***/ })
 
