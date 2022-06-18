@@ -3461,7 +3461,7 @@ const Layout = ({
   const {
     0: currentPage,
     1: setCurrentPage
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(window.location.pathname);
+  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(isBrowser ? window.location.pathname : "");
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     window.addEventListener("resize", lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default()(handleWindowSize, 200));
     window.addEventListener("load", handleWindowSize);

@@ -56,7 +56,9 @@ const Layout = ({ pageTitle, children }: iLayout) => {
     )
     const [wholeScrollHeight, setWholeScrollHeight] = useState(0)
     const [scrollRatio, setScrollRatio] = useState(0)
-    const [currentPage, setCurrentPage] = useState(window.location.pathname)
+    const [currentPage, setCurrentPage] = useState(
+        isBrowser ? window.location.pathname : ""
+    )
 
     useEffect(() => {
         window.addEventListener("resize", throttle(handleWindowSize, 200))
