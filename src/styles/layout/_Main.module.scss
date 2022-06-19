@@ -141,14 +141,19 @@
 
         &__header {
             padding: 16px 16px 0 16px;
-            border-right: $borderSize solid rgba($sy-line, 1);
+
             z-index: 10;
             background: rgba($sy-bg, 0);
             box-shadow: $shadow-btm rgba($sy-black, 0);
             backdrop-filter: blur(60px);
             @include beforeLine($btm: $sy-line);
             transition: 0.4s;
-            &.isActive {
+
+            &:not([data-mobile="true"]) {
+                border-right: $borderSize solid rgba($sy-line, 1);
+            }
+
+            &.isActive[data-type="markdown"] {
                 position: sticky;
                 top: 0;
                 left: 0;
@@ -163,16 +168,15 @@
         }
 
         &__body {
-            border-right: $borderSize solid rgba($sy-line, 1);
             padding: 16px;
             min-height: 100%;
+
+            &:not([data-mobile="true"]) {
+                border-right: $borderSize solid rgba($sy-line, 1);
+            }
         }
     }
 }
-
-// .con_postList {
-//     display: flex;
-// }
 
 .profile {
     width: 100px;

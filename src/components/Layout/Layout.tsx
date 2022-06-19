@@ -37,11 +37,6 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         }
     `)
 
-    useEffect(() => {
-        const url = window.location.pathname
-        console.log(url)
-    }, [])
-
     const mainNavRef = useRef<HTMLElement>(null)
     const [windowWidthState, setWindowWidthState] = useState<number>(
         isBrowser ? window.innerWidth : 0
@@ -61,6 +56,8 @@ const Layout = ({ pageTitle, children }: iLayout) => {
     const conContentsRef = useRef<HTMLElement>(null)
     const contentsHeaderRef = useRef<HTMLDivElement>(null)
     const [isContentsScroll, setIsContentsScroll] = useState(false)
+    const [isMdContents, setIsMdContents] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
 
     const calcContentsScroll = () => {
         let topPosition = conContentsRef.current?.scrollTop
@@ -73,6 +70,17 @@ const Layout = ({ pageTitle, children }: iLayout) => {
             setIsContentsScroll(false)
         }
     }
+
+    useEffect(() => {
+        const url = window.location.pathname
+        const findPostUrlRegExp = /^\/\post/
+
+        if (findPostUrlRegExp.test(url)) {
+            setIsMdContents(true)
+        }
+
+        setIsMobile(checkIsMobile())
+    }, [])
 
     useEffect(() => {
         conContentsRef.current?.addEventListener(
@@ -119,6 +127,12 @@ const Layout = ({ pageTitle, children }: iLayout) => {
         console.log(windowWidthState)
     }, [windowWidthState])
 
+    useEffect(() => {
+        windowDispatch.changeDevice({
+            isMobile,
+        })
+    }, [isMobile])
+
     const handleToggleMainNav = () => {
         if (windowDispatch.windowSizeState.width > 757) {
             mainNavRef.current?.classList.remove(styles.isActive)
@@ -128,6 +142,12 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                 ? mainNavRef.current?.classList.remove(styles.isActive)
                 : mainNavRef.current?.classList.add(styles.isActive)
         }
+    }
+
+    const checkIsMobile = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        )
     }
 
     const calcScrollHeight = () => {
@@ -257,6 +277,8 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                                 ? `${styles.main__contents__header} ${styles.isActive}`
                                 : styles.main__contents__header
                         }
+                        data-type={isMdContents && "markdown"}
+                        data-mobile={isMobile ? isMobile : undefined}
                         ref={contentsHeaderRef}
                     >
                         <h1
@@ -270,19 +292,12 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                                 : pageTitle}
                         </h1>
                     </div>
-                    <div className={styles.main__contents__body}>
+                    <div
+                        className={styles.main__contents__body}
+                        data-mobile={isMobile ? isMobile : undefined}
+                    >
                         {children}
                     </div>
-                    {/* {windowDispatch.windowSizeState.width < 757 ? (
-                        <Button
-                            name="출력버튼"
-                            onClick={() => {
-                                handleToggleMainNav()
-                            }}
-                        />
-                    ) : (
-                        ""
-                    )} */}
                 </section>
             </main>
             <PageFooter />

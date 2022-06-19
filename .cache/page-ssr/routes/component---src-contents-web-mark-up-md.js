@@ -121,7 +121,7 @@ function MDXContent(_ref) {
     "href": "https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7"
   }, `인터넷에 대한 정보`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h3", null, `웹의 등장`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("hr", null), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹이란, 인터넷 표준 문서 시스템으로 인터넷 환경에서 웹 문서의 특정 정보를 사용할 수 있돌고 해주는 서비스를 의미한다(World Wide Web).`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("img", {
     parentName: "p",
-    "src": "https://photos.google.com/share/AF1QipPMAEhjJwBIbL4cAtgg9LHERES905Oht0al4RDTIFSq8kdvVsAlFPiyzPds6c_yqg/photo/AF1QipNLTYnvxn9mdzpeKxFVNUW39y0GQ3_gepGQJugu?key=dGF4ZmVaQkdyaUdNNUxPNk03Vzh0bDdwVmg1TDNn",
+    "src": "https://i.postimg.cc/pd00ywJQ/Untitled.png",
     "alt": "Untitled"
   })), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹은 1989년 CERN 시절 팀 버너스 리(Tim Berners-Lee)에 의해 처음 제안되었다.`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `그는 www, URL, HTTP 등을 고안하였고, 링크를 통해 필요한 정보를 검색하는 하이퍼텍스트(Hyper text) 방식의 웹의 시초가 되었다. 그리고 이러한 웹 관련 기술을 특허내지 않고 `, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("strong", {
     parentName: "p"
@@ -139,7 +139,7 @@ function MDXContent(_ref) {
     "alt": "스크린샷 2022-03-31 오전 10.19.48.png"
   })), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("aside", null, "\uD83D\uDC49 96~08\uB144\uAC04\uC758 1\uCC28 \uBE0C\uB77C\uC6B0\uC800 \uC804\uC7C1, 07\uB144 \uC2A4\uB9C8\uD2B8\uD3F0 \uCD9C\uC2DC, 09~15\uB144 2\uCC28 \uBE0C\uB77C\uC6B0\uC800 \uC804\uC7C1\uC744 \uACAA\uC73C\uBA70 \uC6F9 \uD45C\uC900\uC5D0 \uB300\uD55C \uD544\uC694\uC131\uC774 \uD070 \uD654\uB450\uAC00 \uB418\uC5B4, \uD604\uC7AC\uC5D0\uB3C4 \uC6F9 \uD45C\uC900\uC744 \uC9C0\uD0A4\uB294 \uAC83\uC774 \uC6F9 \uAC1C\uBC1C \uC2DC \uC911\uC694\uD55C \uD56D\uBAA9\uC73C\uB85C \uC790\uB9AC\uB9E4\uAE40\uD558\uAC8C \uB418\uC5C8\uB2E4."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h3", null, `웹 표준`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("hr", null), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹에서 표준적으로 사용되는 기술이나 규칙으로, 표준화 단체인 W3C가 권고한 표준안에 따라 웹 사이트를 작성할 때 이용되는 HTML, CSS, JavaScript 등에 대한 규정이 담겨있다.`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹에 대한 사용성과 접근성을 높이기 위해 고안되었다.`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("img", {
     parentName: "p",
-    "src": "Web%20Markup%20Basic%20020f909a4d6c4a5eaa42650222b13e8b/Untitled%201.png",
+    "src": "https://i.postimg.cc/HkFnHxfb/Untitled-2.png",
     "alt": "Untitled"
   })), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `대표적인 웹 표준`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("ul", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("li", {
     parentName: "ul"
