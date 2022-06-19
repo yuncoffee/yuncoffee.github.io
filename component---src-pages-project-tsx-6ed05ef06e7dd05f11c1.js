@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoffee_log=self.webpackChunkcoffee_log||[]).push([[534],{7509:function(e,t,l){l.r(t);var c=l(7294),f=l(9391);t.default=function(){return c.createElement(f.Z,{pageTitle:"My Project"},c.createElement("div",null,"Portfolio"))}}}]);
+//# sourceMappingURL=component---src-pages-project-tsx-6ed05ef06e7dd05f11c1.js.map
