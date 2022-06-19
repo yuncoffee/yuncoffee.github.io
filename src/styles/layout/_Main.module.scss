@@ -15,7 +15,8 @@
     justify-content: space-between;
     gap: 16px;
     @include desktop() {
-        max-width: 1280px;
+        // max-width: 1280px;
+        max-width: 1440px;
     }
 
     &__nav {
@@ -30,6 +31,10 @@
         border: $borderSize solid rgba($sy-line, 1);
         border-radius: 4px;
         transition: 0.4s;
+
+        @include tablet() {
+            max-width: 240px;
+        }
 
         @include mobile() {
             position: fixed;

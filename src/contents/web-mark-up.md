@@ -185,7 +185,7 @@ HTML에서의 시멘틱 마크업
 대표적인 웹 표준
 
 -   WHATWG (Web Hypertext Application Technology Working Group) - 대표적으로 [HTML](https://namu.wiki/w/HTML)과 웹 API의 표준을 정한다.
--   [W3C](https://namu.wiki/w/W3C) (World Wide Web Consortium) - 대표적으로 [CSS](https://namu.wiki/w/CSS)의 표준을 정한다.
+-   <a href="https://namu.wiki/w/W3C" target="_blank">W3C</a>(World Wide Web Consortium) - 대표적으로 <a href="https://namu.wiki/w/CSS" target="_blank">CSS</a>의 표준을 정한다.
 -   국제 인터넷 표준화 기구 (IETF)가 출판한 인터넷 표준 (STD) 문서
 -   국제 인터넷 표준화 기구 (IETF)가 출판한 RFC (Request for Comments) 문서
 -   [국제표준화기구](https://namu.wiki/w/%EA%B5%AD%EC%A0%9C%ED%91%9C%EC%A4%80%ED%99%94%EA%B8%B0%EA%B5%AC)(ISO)가 출판한 표준들

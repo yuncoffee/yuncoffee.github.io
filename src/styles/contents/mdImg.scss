@@ -3,6 +3,6 @@
 @import "../variables";
 @import "../mixin/mixin";
 
-img[alt="웹표준"] {
-    width: 100%;
+img {
+    max-width: 100%;
 }

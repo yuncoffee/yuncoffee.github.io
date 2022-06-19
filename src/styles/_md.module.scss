@@ -10,17 +10,23 @@
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    padding: 100px 16px;
+    padding: 100px 8px;
     word-break: break-all;
 
     // Markdown Style
-    line-height: 1.8;
-    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.8em;
     font-weight: 400;
+    color: rgba($sy-black, 1);
+
+    strong {
+        font-weight: 600;
+    }
 
     // Apply Padding Attribute to All Elements
     p {
         padding: 3px 0;
+        font-size: 1.6rem;
     }
 
     // Adjust Heading Element Style
@@ -28,31 +34,50 @@
     h2,
     h3 {
         font-weight: 800;
-        margin-bottom: 30px;
+        margin-bottom: 8px;
     }
 
     * + h1,
     * + h2,
     * + h3 {
-        margin-top: 80px;
+        margin-top: 24px;
     }
 
     hr + h1,
     hr + h2,
     hr + h3 {
-        margin-top: 0;
+        margin-top: 16px;
+        margin-bottom: 0;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 3.2rem;
+        margin-bottom: 0;
     }
 
     h2 {
-        font-size: 25px;
+        font-size: 2.4rem;
+        margin-bottom: 0;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    aside {
+        margin: 16px 0;
+        padding: 8px 16px 8px 40px;
+        border: $borderSize solid rgba($sy-gray-02, 1);
+        background: rgba($sy-line, 0.2);
+        border-radius: 8px;
+        text-indent: -24px;
+    }
+
+    img {
+        margin: 16px 0;
+        border-radius: 16px;
+        border: 2px solid rgba($sy-gray-01, 1);
     }
 
     // Adjust Quotation Element Style
@@ -66,27 +91,73 @@
     // Adjust List Element Style
     ol,
     ul {
-        margin-left: 20px;
-        padding: 30px 0;
+        margin-left: 1em;
+        padding: 16px 0;
+    }
+
+    ul {
+        li {
+            list-style: inside;
+        }
     }
 
     // Adjust Horizontal Rule style
     hr {
-        border: 1px solid #000000;
-        margin: 100px 0;
+        border: 1px solid rgba($sy-gray-04, 1);
+        margin: 8px 0 16px 0;
     }
 
     // Adjust Link Element Style
     a {
-        color: #4263eb;
+        color: rgba($sy-gray-05, 1);
         text-decoration: underline;
+        font-size: 1.6rem;
+        transition: 0.3s;
+        margin: 0.1em;
+
+        &:hover {
+            color: rgba($sy-gray-07, 1);
+        }
     }
 
     // Adjust Code Style
+
+    pre {
+        margin: 24px 0;
+        padding-bottom: 4px;
+        border-radius: 16px;
+        border: 2px solid rgba($sy-gray-01, 1);
+        overflow: hidden;
+        background: #2a314b;
+
+        code {
+            margin: 0 16px;
+            padding: 16px 32px;
+            overflow-x: scroll;
+            background: #2a314b;
+            color: rgba($sy-gray-01, 1);
+            display: block;
+
+            @include scrollbar($bg-a: 0, $thumb-c: $sy-white);
+
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-top: 3px solid transparent;
+                border-bottom: 3px solid transparent;
+                border-left: 2px solid rgba($sy-white, 0);
+                border-right: 2px solid rgba($sy-white, 0);
+                border-radius: 50px;
+            }
+        }
+    }
+
     pre[class*="language-"] {
         margin: 30px 0;
         padding: 15px;
-        font-size: 15px;
+        font-size: 1.4rem;
 
         ::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.5);
@@ -94,9 +165,78 @@
         }
     }
 
+    // html
+    span[class="hljs-tag"] {
+        color: rgba($sy-livid, 1);
+    }
+    span[class="hljs-name"] {
+        color: rgba($sy-red, 1);
+    }
+    span[class="hljs-comment"] {
+        color: rgba($sy-gray-05, 1);
+    }
+    span[class="hljs-attr"] {
+        color: rgba(#ce5aea, 1);
+    }
+    span[class="hljs-string"] {
+        color: rgba(#89f5b1, 1);
+    }
+
+    // css
+    span[class="hljs-selector-tag"] {
+        color: rgba($sy-red, 1);
+    }
+
+    span[class="hljs-selector-class"] {
+        color: rgba(#ffc247, 1);
+        font-weight: 700;
+    }
+
+    span[class="hljs-selector-id"] {
+        color: rgba(#78dce8, 1);
+    }
+
+    span[class="hljs-selector-attr"] {
+        color: rgba(#ce5aea, 1);
+    }
+
+    span[class="hljs-selector-pseudo"] {
+        color: rgba(#ce5aea, 1);
+    }
+
+    span[class="hljs-attribute"] {
+        color: rgba($sy-red, 1);
+    }
+
+    span[class="hljs-number"] {
+        color: rgba(#fe8420, 1);
+    }
+
+    span[class="hljs-keyword"] {
+        color: rgba(#78dce8, 1);
+    }
+    span[class="hljs-built_in"] {
+        color: rgba(#76b7f2, 1);
+    }
+
+    // scss
+    code[class*="language-scss"] {
+        span[class="hljs-variable"] {
+            color: rgba($sy-gray-02, 1);
+        }
+        span[class="hljs-string"] {
+            color: rgba(#89f5b1, 1);
+        }
+        span[class="hljs-keyword"] {
+            color: rgba(#78dce8, 1);
+        }
+    }
+
     code[class*="language-"],
     pre[class*="language-"] {
         tab-size: 2;
+        font-size: 1.6rem;
+        line-height: 1.8em;
     }
 
     // Markdown Responsive Design
@@ -123,7 +263,7 @@
         }
 
         hr {
-            margin: 50px 0;
+            margin: 16px 0;
         }
     }
 }
