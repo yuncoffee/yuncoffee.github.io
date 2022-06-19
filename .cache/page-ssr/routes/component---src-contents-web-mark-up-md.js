@@ -121,7 +121,7 @@ function MDXContent(_ref) {
     "href": "https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7"
   }, `인터넷에 대한 정보`)), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("h3", null, `웹의 등장`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("hr", null), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹이란, 인터넷 표준 문서 시스템으로 인터넷 환경에서 웹 문서의 특정 정보를 사용할 수 있돌고 해주는 서비스를 의미한다(World Wide Web).`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("img", {
     parentName: "p",
-    "src": "Web%20Markup%20Basic%20020f909a4d6c4a5eaa42650222b13e8b/Untitled.png",
+    "src": "https://photos.google.com/share/AF1QipPMAEhjJwBIbL4cAtgg9LHERES905Oht0al4RDTIFSq8kdvVsAlFPiyzPds6c_yqg/photo/AF1QipNLTYnvxn9mdzpeKxFVNUW39y0GQ3_gepGQJugu?key=dGF4ZmVaQkdyaUdNNUxPNk03Vzh0bDdwVmg1TDNn",
     "alt": "Untitled"
   })), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `웹은 1989년 CERN 시절 팀 버너스 리(Tim Berners-Lee)에 의해 처음 제안되었다.`), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("p", null, `그는 www, URL, HTTP 등을 고안하였고, 링크를 통해 필요한 정보를 검색하는 하이퍼텍스트(Hyper text) 방식의 웹의 시초가 되었다. 그리고 이러한 웹 관련 기술을 특허내지 않고 `, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__.mdx)("strong", {
     parentName: "p"

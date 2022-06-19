@@ -112,7 +112,7 @@ HTML에서의 시멘틱 마크업
 
 웹이란, 인터넷 표준 문서 시스템으로 인터넷 환경에서 웹 문서의 특정 정보를 사용할 수 있돌고 해주는 서비스를 의미한다(World Wide Web).
 
-![Untitled](https://photos.google.com/share/AF1QipPMAEhjJwBIbL4cAtgg9LHERES905Oht0al4RDTIFSq8kdvVsAlFPiyzPds6c_yqg/photo/AF1QipNLTYnvxn9mdzpeKxFVNUW39y0GQ3_gepGQJugu?key=dGF4ZmVaQkdyaUdNNUxPNk03Vzh0bDdwVmg1TDNn)
+![Untitled](https://i.postimg.cc/pd00ywJQ/Untitled.png)
 
 웹은 1989년 CERN 시절 팀 버너스 리(Tim Berners-Lee)에 의해 처음 제안되었다.
 
@@ -180,7 +180,7 @@ HTML에서의 시멘틱 마크업
 
 웹에 대한 사용성과 접근성을 높이기 위해 고안되었다.
 
-![Untitled](Web%20Markup%20Basic%20020f909a4d6c4a5eaa42650222b13e8b/Untitled%201.png)
+![Untitled](https://i.postimg.cc/HkFnHxfb/Untitled-2.png)
 
 대표적인 웹 표준
 

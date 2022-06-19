@@ -1069,6 +1069,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isActive": () => (/* binding */ isActive),
 /* harmony export */   "main": () => (/* binding */ main),
 /* harmony export */   "main__contents": () => (/* binding */ main__contents),
+/* harmony export */   "main__contents__body": () => (/* binding */ main__contents__body),
+/* harmony export */   "main__contents__header": () => (/* binding */ main__contents__header),
 /* harmony export */   "main__nav": () => (/* binding */ main__nav),
 /* harmony export */   "main__nav__contact": () => (/* binding */ main__nav__contact),
 /* harmony export */   "main__nav__header": () => (/* binding */ main__nav__header),
@@ -1089,6 +1091,8 @@ var main__nav__list = "_Main-module--main__nav__list--klbWk";
 var main__nav__listItem = "_Main-module--main__nav__listItem--wEDL3";
 var main__nav__contact = "_Main-module--main__nav__contact--BzxGF";
 var main__contents = "_Main-module--main__contents--J4738";
+var main__contents__header = "_Main-module--main__contents__header--Upuh+";
+var main__contents__body = "_Main-module--main__contents__body--0QCEy";
 var profile = "_Main-module--profile--pZTeT";
 var con_stack = "_Main-module--con_stack--XWvFS";
 var stack = "_Main-module--stack--yZTBG";
@@ -3527,7 +3531,33 @@ const Layout = ({
   const {
     0: currentPage,
     1: setCurrentPage
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(window.location.pathname);
+  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(isBrowser ? window.location.pathname : 0);
+  const conContentsRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)(null);
+  const contentsHeaderRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)(null);
+  const {
+    0: isContentsScroll,
+    1: setIsContentsScroll
+  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+
+  const calcContentsScroll = () => {
+    var _conContentsRef$curre;
+
+    let topPosition = (_conContentsRef$curre = conContentsRef.current) === null || _conContentsRef$curre === void 0 ? void 0 : _conContentsRef$curre.scrollTop;
+
+    if (topPosition > 50) {
+      setIsContentsScroll(true);
+    } else if (isContentsScroll && topPosition > 50) {
+      return;
+    } else {
+      setIsContentsScroll(false);
+    }
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    var _conContentsRef$curre2;
+
+    (_conContentsRef$curre2 = conContentsRef.current) === null || _conContentsRef$curre2 === void 0 ? void 0 : _conContentsRef$curre2.addEventListener("scroll", lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default()(calcContentsScroll, 500));
+  }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     window.addEventListener("resize", lodash_throttle__WEBPACK_IMPORTED_MODULE_1___default()(handleWindowSize, 200));
     window.addEventListener("load", handleWindowSize);
@@ -3662,13 +3692,19 @@ const Layout = ({
       key: index
     });
   }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("section", {
-    className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__contents
+    className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__contents,
+    ref: conContentsRef
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
+    className: isContentsScroll ? `${_styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__contents__header} ${_styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.isActive}` : _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__contents__header,
+    ref: contentsHeaderRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("h1", {
+    "s-length": "100%",
     "s-color": "sy-pri",
     "s-font-weight": "200",
-    "s-margin-btm": "16px",
     "s-padding-btm": "8px"
-  }, pageTitle === "coffee.log" ? "My project" : pageTitle), children)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(_Footer_PageFooter__WEBPACK_IMPORTED_MODULE_8__["default"], null));
+  }, pageTitle === "coffee.log" ? "My project" : pageTitle)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
+    className: _styles_layout_Main_module_scss__WEBPACK_IMPORTED_MODULE_12__.main__contents__body
+  }, children))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(_Footer_PageFooter__WEBPACK_IMPORTED_MODULE_8__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Layout);
