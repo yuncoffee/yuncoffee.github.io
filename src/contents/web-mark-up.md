@@ -180,7 +180,7 @@ HTML에서의 시멘틱 마크업
 
 웹에 대한 사용성과 접근성을 높이기 위해 고안되었다.
 
-![Untitled](https://i.postimg.cc/HkFnHxfb/Untitled-2.png)
+![웹표준](https://i.postimg.cc/HkFnHxfb/Untitled-2.png)
 
 대표적인 웹 표준
 
@@ -207,7 +207,7 @@ HTML에서의 시멘틱 마크업
 
 ---
 
-![Untitled](Web%20Markup%20Basic%20020f909a4d6c4a5eaa42650222b13e8b/Untitled%202.png)
+![웹표준](Web%20Markup%20Basic%20020f909a4d6c4a5eaa42650222b13e8b/Untitled%202.png)
 
 **초안(WD, working Draft)**
 

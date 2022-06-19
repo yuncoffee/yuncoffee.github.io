@@ -141,7 +141,7 @@
 
         &__header {
             padding: 16px 16px 0 16px;
-
+            position: relative;
             z-index: 10;
             background: rgba($sy-bg, 0);
             box-shadow: $shadow-btm rgba($sy-black, 0);

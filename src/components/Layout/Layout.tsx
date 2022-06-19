@@ -19,6 +19,7 @@ import PageFooter from "../Footer/PageFooter"
 import PageNav from "../Nav/PageNav"
 import ScrollNav from "../Nav/ScrollNav"
 import { Helmet } from "react-helmet"
+import hljs from "highlight.js"
 import * as styles from "../../styles/layout/_Main.module.scss"
 interface iLayout {
     pageTitle?: string
@@ -74,7 +75,7 @@ const Layout = ({ pageTitle, children }: iLayout) => {
     useEffect(() => {
         const url = window.location.pathname
         const findPostUrlRegExp = /^\/\post/
-
+        hljs.initHighlightingOnLoad()
         if (findPostUrlRegExp.test(url)) {
             setIsMdContents(true)
         }
@@ -179,6 +180,10 @@ const Layout = ({ pageTitle, children }: iLayout) => {
                 <link
                     href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
                     rel="stylesheet"
+                ></link>
+                <link
+                    rel="stylesheet"
+                    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/github.min.css"
                 ></link>
             </Helmet>
             <title>
